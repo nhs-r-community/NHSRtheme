@@ -3,11 +3,17 @@
 #' This function gets the colours as defined by the
 #' [NHS Identity](https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/)
 #'
+#' @param section a character, or list of characters of the colour sections to
+#'                 use
+#'
 #' @return named vector of hexadecimal strings of colours
 #' @export
 #'
 #' @examples
-getNhsColours <- function (section) {
+#' getNhsColours()
+#' getNhsColours("blues")
+#' getNhsColours(c("blues", "neutrals"))
+getNhsColours <- function (section = NULL) {
   if (is.null(section)) {
     section <- c("blues",
                  "neutrals",
@@ -65,14 +71,21 @@ getNhsColours <- function (section) {
 #'
 #' This function returns tints of the NHS identity colours
 #'
+#' @param tints a vector of numbers between 0 and 1 for the percentage colour
+#'               tint to use
+#' @param section a character, or list of characters of the colour sections to
+#'                 use
+#'
 #' @return named vector of hexadecimal strings of colours
 #' @importFrom dplyr %>%
 #' @importFrom purrr map_chr map set_names
 #' @importFrom scales percent
-#' @importFrom base as.vector round sprintf sum unlist
+#' @importFrom grDevices col2rgb
 #' @export
 #'
 #' @examples
+#' getNhsColourTints(seq(0.0,0.8,0.2))
+#' getNhsColourTints(seq(0.0,0.8,0.2), "blues")
 getNhsColourTints <- function (tints, section = NULL) {
   colours <- getNhsColours(section)
 
