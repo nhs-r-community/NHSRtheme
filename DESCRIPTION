@@ -15,3 +15,5 @@ Imports:
   purrr (>= 0.3.0),
   scales (>= 1.0.0),
   roxygen2 (>= 6.1.0)
+Suggests: 
+    testthat
