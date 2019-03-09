@@ -9,11 +9,14 @@
 #' @return named vector of hexadecimal strings of colours
 #' @export
 #'
+#' @importFrom dplyr %>%
+#' @importFrom purrr map_lgl
+#'
 #' @examples
 #' getNhsColours()
 #' getNhsColours("blues")
 #' getNhsColours(c("blues", "neutrals"))
-getNhsColours <- function (section = NULL) {
+getNhsColours <- function (..., section = NULL) {
   if (is.null(section)) {
     section <- c("blues",
                  "neutrals",
@@ -21,6 +24,7 @@ getNhsColours <- function (section = NULL) {
                  "highlights")
   }
 
+  dots <- unique(c(...))
   colours <- c()
 
   # Level 1: NHS blues
@@ -64,6 +68,14 @@ getNhsColours <- function (section = NULL) {
       Yellow     = "#FAE100")
   }
 
+  if (!is.null(dots)) {
+    colours <- colours[dots]
+
+    if(colours %>% map_lgl(is.na) %>% any) {
+      stop("Invalid colours specified")
+    }
+  }
+
   return (colours)
 }
 
@@ -86,8 +98,8 @@ getNhsColours <- function (section = NULL) {
 #' @examples
 #' getNhsColourTints(seq(0.0,0.8,0.2))
 #' getNhsColourTints(seq(0.0,0.8,0.2), "blues")
-getNhsColourTints <- function (tints, section = NULL) {
-  colours <- getNhsColours(section)
+getNhsColourTints <- function (tints, ..., section = NULL) {
+  colours <- getNhsColours(..., section = section)
 
   getTints <- function(colour) {
     colTint <- function(tint) {
