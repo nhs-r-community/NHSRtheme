@@ -1,9 +1,13 @@
 context("test-getnhscolourtints")
 library(mockery)
 
+test_that("getNhsColourTints returns a character vector", {
+  colours <- getNhsColourTints(seq(0,1,0.1))
+  expect_is(colours, "character")
+})
+
 test_that("getNhsColourTints returns", {
   actual <- getNhsColourTints(seq(0, 1, 0.1))
-
   expect_equal_to_reference(actual, "getNhsColourTints.rds")
 })
 
