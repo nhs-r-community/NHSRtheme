@@ -162,6 +162,12 @@ Source: CRAN
 Version: 0.6
 Hash: 2ed8f98b8284ad733f3907fc6e2f1334
 
+Package: mockery
+Source: CRAN
+Version: 0.4.1.1
+Hash: a74c2d2625124f15c2269fe3fcd176dd
+Requires: testthat
+
 Package: munsell
 Source: CRAN
 Version: 0.5.0
