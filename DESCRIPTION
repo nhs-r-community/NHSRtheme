@@ -4,9 +4,16 @@ Title: NHS R Theme
 Version: 0.1.0
 Author: Tom Jemmett
 Maintainer: Tom Jemmett <tom.jemmett@gmail.com>
-Description: Provides theme's based on the [https://www.england.nhs.uk/nhsidentity/](NHS Identity)
+Description: Provides theme's based on the [https://www.england.nhs.uk/nhsidentity/](NHS Identity).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Imports:
+  dplyr (>= 0.8.0),
+  purrr (>= 0.3.0),
+  scales (>= 1.0.0),
+  roxygen2 (>= 6.1.0)
+Suggests: 
+    testthat
