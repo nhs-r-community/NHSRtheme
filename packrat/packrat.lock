@@ -115,6 +115,13 @@ Version: 1.2.6
 Hash: d12b2a43b7c98febcbdb9e07584bc634
 Requires: Rcpp
 
+Package: ggplot2
+Source: CRAN
+Version: 3.1.0
+Hash: ef541b05dda10b209d509b5bbaf46ea3
+Requires: digest, gtable, lazyeval, plyr, reshape2, rlang, scales,
+    tibble, viridisLite, withr
+
 Package: gh
 Source: CRAN
 Version: 1.0.1
@@ -130,6 +137,11 @@ Package: glue
 Source: CRAN
 Version: 1.3.0
 Hash: 1fbde6dec830370be696eee8ef31c9e4
+
+Package: gtable
+Source: CRAN
+Version: 0.2.0
+Hash: cd78381a9d3fea966ac39bd0daaf5554
 
 Package: httr
 Source: CRAN
@@ -151,6 +163,11 @@ Package: labeling
 Source: CRAN
 Version: 0.3
 Hash: ecf589b42cd284b03a4beb9665482d3e
+
+Package: lazyeval
+Source: CRAN
+Version: 0.2.1
+Hash: 88926ad9c43581fd0822a37c8ed09f05
 
 Package: magrittr
 Source: CRAN
@@ -213,6 +230,12 @@ Source: CRAN
 Version: 0.2.0
 Hash: 81a8008a5e7858552503935f1abe48aa
 
+Package: plyr
+Source: CRAN
+Version: 1.8.4
+Hash: 1ca393a9f51341b8fa034f743adf1f53
+Requires: Rcpp
+
 Package: praise
 Source: CRAN
 Version: 1.0.0
@@ -240,6 +263,12 @@ Source: CRAN
 Version: 0.3.1
 Hash: b38aa54611eb7c5829c63ba298eeed43
 Requires: magrittr, rlang
+
+Package: reshape2
+Source: CRAN
+Version: 1.4.3
+Hash: c950c8ac85b81209635acb3ce21b4cce
+Requires: Rcpp, plyr, stringr
 
 Package: rlang
 Source: CRAN
@@ -297,6 +326,13 @@ Source: CRAN
 Version: 2.0.1
 Hash: d2a00b9a314cfad8f6b51e2c97aaff5c
 Requires: cli, crayon, fansi, pillar, pkgconfig, rlang
+
+Package: tidyr
+Source: CRAN
+Version: 0.8.3
+Hash: c1141a41f76cdf7650a51f0172ca76cf
+Requires: Rcpp, dplyr, glue, magrittr, purrr, rlang, stringi, tibble,
+    tidyselect
 
 Package: tidyselect
 Source: CRAN
