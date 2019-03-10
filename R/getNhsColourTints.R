@@ -18,6 +18,10 @@
 #' getNhsColourTints(seq(0.0,0.8,0.2))
 #' getNhsColourTints(seq(0.0,0.8,0.2), "blues")
 getNhsColourTints <- function (tints, ..., section = NULL) {
+  if (!is.numeric(tints) || any(tints < 0) || any(tints > 1))  {
+    stop("tints must be a numeric vector between 0 and 1")
+  }
+
   colours <- getNhsColours(..., section = section)
 
   getTints <- function(colour) {
