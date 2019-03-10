@@ -4,14 +4,12 @@ library(purrr)
 
 test_that("getNhsColours returns a character vector", {
   colours <- getNhsColours()
-
-  testthat::expect_is(colours, "character")
+  expect_is(colours, "character")
 })
 
 test_that("getNhsColours returns correct colours", {
-  expected <- readRDS("getNhsColours.rds")
   actual <- getNhsColours()
-  expect_equal(actual, expected)
+  expect_equal_to_reference(actual, "getNhsColours.rds")
 })
 
 test_that("getNhsColours returns only the colour passed to it", {
