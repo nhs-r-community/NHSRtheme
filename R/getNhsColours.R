@@ -48,8 +48,8 @@ getNhsColours <- function (..., section = NULL) {
   # Level 3: NHS support greens
   if (is.null(section) || section == "support greens") {
     colours <- c(colours,
-      Green      = "#009639",
       DarkGreen  = "#006747",
+      Green      = "#009639",
       LightGreen = "#78BE20",
       AquaGreen  = "#00A499")
   }
