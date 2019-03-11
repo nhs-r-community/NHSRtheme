@@ -9,7 +9,7 @@
 #' @importFrom ggplot2 discrete_scale scale_color_gradientn
 #' @export
 scale_colour_nhs <- function(palette = "blues", discrete = TRUE, reverse = FALSE, ...) {
-  pal <- nhstheme_pal(palette = palette, reverse = reverse)
+  pal <- getNhsPalette(palette = palette, reverse = reverse)
 
   if (discrete) {
     discrete_scale("colour", paste0("nhstheme_", palette), palette = pal, ...)
