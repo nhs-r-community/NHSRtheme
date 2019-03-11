@@ -1,4 +1,4 @@
-context("test-getnhscolourtints")
+context("test-getNhsColourTints")
 library(mockery)
 
 test_that("getNhsColourTints returns a character vector", {

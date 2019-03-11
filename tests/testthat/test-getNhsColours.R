@@ -1,4 +1,4 @@
-context("getNhsColours")
+context("test-getNhsColours")
 library(dplyr)
 library(purrr)
 
