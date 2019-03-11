@@ -12,7 +12,7 @@
 #'
 #' @examples
 #' sample_plot()
-sample_plot <- function() {
+showNhsThemeColours <- function() {
   c("blues", "neutrals", "support greens", "highlights") %>%
     map_dfr(function(s) {
       colours <- getNhsColours(section = s)

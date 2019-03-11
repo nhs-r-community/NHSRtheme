@@ -2,9 +2,9 @@
 
 export(getNhsColourTints)
 export(getNhsColours)
-export(sample_plot)
 export(scale_colour_nhs)
 export(scale_fill_nhs)
+export(showNhsThemeColours)
 import(ggplot2)
 importFrom(dplyr,"%>%")
 importFrom(dplyr,group_by)
