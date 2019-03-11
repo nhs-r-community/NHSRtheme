@@ -6,7 +6,11 @@
 #'
 #' @importFrom grDevices colorRampPalette
 getNhsPalette <- function(palette = "blues", reverse = FALSE, ...) {
-  pal <- getNhsColours(section = palette)
+  if (palette == "main") {
+    pal <- getNhsColours("Blue", "Purple", "Red", "Orange", "Green")
+  } else {
+    pal <- getNhsColours(section = palette)
+  }
 
   if (reverse) pal <- rev(pal)
 

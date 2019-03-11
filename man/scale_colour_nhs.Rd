@@ -4,7 +4,7 @@
 \alias{scale_colour_nhs}
 \title{Color scale constructor for NHS theme colours}
 \usage{
-scale_colour_nhs(palette = "blues", discrete = TRUE, reverse = FALSE,
+scale_colour_nhs(palette = "main", discrete = TRUE, reverse = FALSE,
   ...)
 }
 \arguments{
