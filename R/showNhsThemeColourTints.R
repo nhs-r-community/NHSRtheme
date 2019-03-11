@@ -5,8 +5,8 @@
 #'
 #' @return named vector of hexadecimal strings of colours
 #'
-#' @param tints a vector of numbers in [0, 1] that represents the percentage tints
-#'              required
+#' @param tints a vector of numbers between 0 and 1 that represents the
+#'              percentage tints required
 #' @param colour the name of the colour to show tints of
 #'
 #' @importFrom dplyr %>% group_by mutate tibble row_number

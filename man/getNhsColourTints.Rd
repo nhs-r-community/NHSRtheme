@@ -10,8 +10,9 @@ getNhsColourTints(tints, ..., section = NULL)
 \item{tints}{a vector of numbers between 0 and 1 for the percentage colour
 tint to use}
 
-\item{section}{a character, or list of characters of the colour sections to
-use}
+\item{...}{optional names of the colours to return}
+
+\item{section}{optional, name of the colour sections to use}
 }
 \value{
 named vector of hexadecimal strings of colours
@@ -21,5 +22,6 @@ This function returns tints of the NHS identity colours
 }
 \examples{
 getNhsColourTints(seq(0.0,0.8,0.2))
-getNhsColourTints(seq(0.0,0.8,0.2), "blues")
+getNhsColourTints(seq(0.0,0.8,0.2), "Blue", "Red")
+getNhsColourTints(seq(0.0,0.8,0.2), section = "blues")
 }

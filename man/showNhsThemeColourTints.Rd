@@ -7,8 +7,8 @@
 showNhsThemeColourTints(tints, colour)
 }
 \arguments{
-\item{tints}{a vector of numbers in \link{0, 1} that represents the percentage tints
-required}
+\item{tints}{a vector of numbers between 0 and 1 that represents the
+percentage tints required}
 
 \item{colour}{the name of the colour to show tints of}
 }

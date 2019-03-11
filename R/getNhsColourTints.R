@@ -4,8 +4,8 @@
 #'
 #' @param tints a vector of numbers between 0 and 1 for the percentage colour
 #'               tint to use
-#' @param section a character, or list of characters of the colour sections to
-#'                 use
+#' @param ... optional names of the colours to return
+#' @param section optional, name of the colour sections to use
 #'
 #' @return named vector of hexadecimal strings of colours
 #' @importFrom dplyr %>%
@@ -16,7 +16,8 @@
 #'
 #' @examples
 #' getNhsColourTints(seq(0.0,0.8,0.2))
-#' getNhsColourTints(seq(0.0,0.8,0.2), "blues")
+#' getNhsColourTints(seq(0.0,0.8,0.2), "Blue", "Red")
+#' getNhsColourTints(seq(0.0,0.8,0.2), section = "blues")
 getNhsColourTints <- function (tints, ..., section = NULL) {
   if (!is.numeric(tints) || any(tints < 0) || any(tints > 1))  {
     stop("tints must be a numeric vector between 0 and 1")

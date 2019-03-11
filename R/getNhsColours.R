@@ -13,8 +13,9 @@
 #'
 #' @examples
 #' getNhsColours()
-#' getNhsColours("blues")
-#' getNhsColours(c("blues", "neutrals"))
+#' getNhsColours("Blue")
+#' getNhsColours("Blue", "Red")
+#' getNhsColours(section = "blues")
 getNhsColours <- function (..., section = NULL) {
   dots <- unique(c(...))
   colours <- c()
