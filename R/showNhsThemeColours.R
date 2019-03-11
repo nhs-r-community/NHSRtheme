@@ -5,7 +5,7 @@
 #'
 #'
 #' @return named vector of hexadecimal strings of colours
-#' @importFrom dplyr %>% group_by mutate tibble
+#' @importFrom dplyr %>% group_by mutate tibble row_number
 #' @importFrom purrr map_dfr
 #' @import ggplot2
 #' @export
