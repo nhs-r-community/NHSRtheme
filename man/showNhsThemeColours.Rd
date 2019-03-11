@@ -14,5 +14,5 @@ This function shows the available colours in the NHS theme, as defined by the
 \href{https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/}{NHS Identity}
 }
 \examples{
-sample_plot()
+showNhsThemeColours()
 }

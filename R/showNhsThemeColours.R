@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-#' sample_plot()
+#' showNhsThemeColours()
 showNhsThemeColours <- function() {
   c("blues", "neutrals", "support greens", "highlights") %>%
     map_dfr(function(s) {
