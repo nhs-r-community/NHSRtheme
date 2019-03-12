@@ -33,42 +33,52 @@ test_that("getNhsPalette calls colorRampPalette", {
 })
 
 test_that("getNhsPalette calls getNhsColours", {
-  m <- mock("#000000", "#ffffff")
+  m <- mock(c("#000000", "#ffffff"), cycle = TRUE)
+  stub(getNhsPalette, "getNhsColours", m)
 
   # first without a section
-  with_mock(
-    getNhsColours = m,
-    getNhsPalette()
-  )
+  getNhsPalette()
+  # then, with a section
+  getNhsPalette("blues")
+
+  expect_called(m, 2)
 
   expect_call(m, 1, getNhsColours("Blue", "Purple", "Red", "Orange", "Green"))
-
-  # then, with a section
-  with_mock(
-    getNhsColours = m,
-    getNhsPalette("blues")
-  )
+  expect_args(m, 1, "Blue", "Purple", "Red", "Orange", "Green")
 
   expect_call(m, 2, getNhsColours(section = palette))
+  expect_args(m, 2, section = "blues")
 })
 
 test_that("getNhsPalette doesn't call rev by default", {
-  m <- mock("#000000", "#ffffff")
+  m <- mock(c("#000000", "#ffffff"))
   stub(getNhsPalette, 'rev', m)
+
   getNhsPalette()
+
   expect_called(m, 0)
 })
 
 test_that("getNhsPalette doesn't call rev when argument is false", {
-  m <- mock("#000000", "#ffffff")
+  m <- mock(c("#000000", "#ffffff"))
   stub(getNhsPalette, 'rev', m)
+
   getNhsPalette(reverse = FALSE)
+
   expect_called(m, 0)
 })
 
 test_that("getNhsPalette calls rev when argument is true", {
-  m <- mock("#000000", "#ffffff")
+  pal <- c("a","b","c")
+
+  m <- mock(c("#000000", "#ffffff"))
   stub(getNhsPalette, 'rev', m)
+  stub(getNhsPalette, 'getNhsColours', mock(pal))
+
   getNhsPalette(reverse = TRUE)
+
   expect_called(m, 1)
+
+  expect_call(m, 1, rev(pal))
+  expect_args(m, 1, pal)
 })

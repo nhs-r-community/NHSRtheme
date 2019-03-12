@@ -1,5 +1,6 @@
 context("test-getNhsColourTints")
 library(mockery)
+library(testthat)
 
 test_that("getNhsColourTints returns a character vector", {
   colours <- getNhsColourTints(seq(0,1,0.1))
@@ -18,19 +19,20 @@ test_that("getNhsColourTints throws an error if one of the tint values is not in
 
 test_that("getNhsColourTints calls getNhsColours", {
   m <- mock()
+  stub(getNhsColourTints, "getNhsColours", m)
 
-  with_mock(getNhsColours = m,
-            getNhsColourTints(seq(0,1,0.1)))
+  getNhsColourTints(seq(0,1,0.1))
+  getNhsColourTints(seq(0,1,0.1), "Blue", "Green")
+  getNhsColourTints(seq(0,1,0.1), section = "blues")
 
-  expect_called(m, 1)
+  expect_called(m, 3)
 
-  with_mock(getNhsColours = m,
-            getNhsColourTints(seq(0,1,0.1), "Blue", "Green"))
+  expect_call(m, 1, getNhsColours(section = section))
+  expect_args(m, 1, section = NULL)
 
   expect_call(m, 2, getNhsColours("Blue", "Green", section = section))
-
-  with_mock(getNhsColours = m,
-            getNhsColourTints(seq(0,1,0.1), section = "blues"))
+  expect_args(m, 2, "Blue", "Green", section = NULL)
 
   expect_call(m, 3, getNhsColours(section = section))
+  expect_args(m, 3, section = "blues")
 })
