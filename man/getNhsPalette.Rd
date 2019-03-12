@@ -4,7 +4,7 @@
 \alias{getNhsPalette}
 \title{Return function to interpolate an Nhs theme colour palette}
 \usage{
-getNhsPalette(palette = "blues", reverse = FALSE, ...)
+getNhsPalette(palette = "main", reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Character name of section in Nhs theme}
