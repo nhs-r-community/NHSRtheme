@@ -1,4 +1,4 @@
-context("getNhsColours")
+context("test-getNhsColours")
 library(dplyr)
 library(purrr)
 
@@ -40,7 +40,7 @@ test_that("getNhsColours returns specific colours if a section is passed", {
   sections = list(
     `blues` = c("DarkBlue", "Blue", "BrightBlue", "LightBlue", "AquaBlue"),
     `neutrals` = c("Black", "DarkGrey", "MidGrey", "PaleGrey"),
-    `support greens` = c("Green", "DarkGreen", "LightGreen", "AquaGreen"),
+    `support greens` = c("DarkGreen", "Green", "LightGreen", "AquaGreen"),
     `highlights` = c("Purple", "DarkPink", "Pink", "DarkRed", "Red", "Orange",
                      "WarmYellow", "Yellow")
   )
