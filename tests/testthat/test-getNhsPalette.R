@@ -6,6 +6,21 @@ test_that("getNhsPalette returns a function", {
   expect_is(getNhsPalette(), "function")
 })
 
+test_that("getNhsPalette returns a function that returns colour strings", {
+  expected <- c("#005EB8", "#330072", "#DA291C", "#ED8B00", "#009639")
+  actual <- getNhsPalette()(5)
+  expect_equal(actual, expected)
+
+  expected <- c("#003087", "#0072CE", "#00A9CE")
+  actual <- getNhsPalette("blues")(3)
+  expect_equal(actual, expected)
+
+  expected <- c("#231F20", "#323941", "#425563", "#5C6D7A", "#768692", "#AEB9C0",
+                "#E8EDEE")
+  actual <- getNhsPalette("neutrals")(7)
+  expect_equal(actual, expected)
+})
+
 test_that("getNhsPalette calls colorRampPalette", {
   m <- mock()
 
