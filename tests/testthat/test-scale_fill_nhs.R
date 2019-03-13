@@ -31,7 +31,7 @@ test_that("scale_fill_nhs calls getNhsPalette", {
   expect_args(m, 3, palette = "main", reverese = TRUE)
 })
 
-test_that("scale_fill_nhs calls discrete_scale when discrete is left as default", {
+discrete_scale_helper <- function(code, discrete) {
   d <- mock()
   c <- mock()
   p <- function(n) { n }
@@ -40,47 +40,29 @@ test_that("scale_fill_nhs calls discrete_scale when discrete is left as default"
   stub(scale_fill_nhs, "scale_fill_gradientn", c)
   stub(scale_fill_nhs, "getNhsPalette", mock(p))
 
-  scale_fill_nhs()
+  code <- substitute(code)
+  eval(code)
 
-  expect_called(d, 1)
-  expect_called(c, 0)
+  expect_called(d, as.numeric( discrete))
+  expect_called(c, as.numeric(!discrete))
 
-  expect_call(d, 1, discrete_scale("fill", paste0("nhstheme_", palette), palette = pal))
-  expect_args(d, 1, "fill", "nhstheme_main", palette = p)
+  if (discrete) {
+    expect_call(d, 1, discrete_scale("fill", paste0("nhstheme_", palette), palette = pal))
+    expect_args(d, 1, "fill", "nhstheme_main", palette = p)
+  } else {
+    expect_call(c, 1, scale_fill_gradientn(colours = pal(256)))
+    expect_args(c, 1, colours = p(256))
+  }
+}
+
+test_that("scale_fill_nhs calls discrete_scale when discrete is left as default", {
+  discrete_scale_helper(scale_fill_nhs(), TRUE)
 })
 
 test_that("scale_fill_nhs calls discrete_scale when discrete = TRUE", {
-  d <- mock()
-  c <- mock()
-  p <- function(n) { n }
-
-  stub(scale_fill_nhs, "discrete_scale", d)
-  stub(scale_fill_nhs, "scale_fill_gradientn", c)
-  stub(scale_fill_nhs, "getNhsPalette", mock(p))
-
-  scale_fill_nhs(discrete = TRUE)
-
-  expect_called(d, 1)
-  expect_called(c, 0)
-
-  expect_call(d, 1, discrete_scale("fill", paste0("nhstheme_", palette), palette = pal))
-  expect_args(d, 1, "fill", "nhstheme_main", palette = p)
+  discrete_scale_helper(scale_fill_nhs(discrete = TRUE), TRUE)
 })
 
 test_that("scale_fill_nhs calls scale_fill_gradientn when discrete = FALSE", {
-  d <- mock()
-  c <- mock()
-  p <- function(n) { n }
-
-  stub(scale_fill_nhs, "discrete_scale", d)
-  stub(scale_fill_nhs, "scale_fill_gradientn", c)
-  stub(scale_fill_nhs, "getNhsPalette", mock(p))
-
-  scale_fill_nhs(discrete = FALSE)
-
-  expect_called(d, 0)
-  expect_called(c, 1)
-
-  expect_call(c, 1, scale_fill_gradientn(colours = pal(256)))
-  expect_args(c, 1, colours = p(256))
+  discrete_scale_helper(scale_fill_nhs(discrete = FALSE), FALSE)
 })

@@ -1,6 +1,6 @@
 PackratFormat: 1.4
 PackratVersion: 0.4.9.3
-RVersion: 3.5.2
+RVersion: 3.5.1
 Repos: CRAN=https://cran.rstudio.com/
 
 Package: BH
@@ -92,6 +92,14 @@ Version: 1.2.0
 Hash: a1fd2baa29d4954951e3d1816deab6af
 Requires: R6, assertthat, crayon, rprojroot
 
+Package: devtools
+Source: CRAN
+Version: 2.0.1
+Hash: 4da83470ae57bd2db0ac06e91b1d3a08
+Requires: callr, cli, digest, git2r, httr, jsonlite, memoise, pkgbuild,
+    pkgload, rcmdcheck, remotes, rstudioapi, sessioninfo, usethis,
+    withr
+
 Package: digest
 Source: CRAN
 Version: 0.6.18
@@ -173,6 +181,12 @@ Package: magrittr
 Source: CRAN
 Version: 1.5
 Hash: bdc4d48c3135e8f3b399536ddf160df4
+
+Package: memoise
+Source: CRAN
+Version: 1.1.0
+Hash: 410fcd334bc626db100237cc1370f2e9
+Requires: digest
 
 Package: mime
 Source: CRAN
@@ -264,6 +278,18 @@ Version: 0.3.1
 Hash: b38aa54611eb7c5829c63ba298eeed43
 Requires: magrittr, rlang
 
+Package: rcmdcheck
+Source: CRAN
+Version: 1.3.1
+Hash: 28966da61325157078d5e00dae91f53e
+Requires: R6, callr, cli, crayon, desc, digest, pkgbuild, prettyunits,
+    rprojroot, sessioninfo, withr, xopen
+
+Package: remotes
+Source: CRAN
+Version: 2.0.2
+Hash: 7ce52c748688713b0569596bda4f52cc
+
 Package: reshape2
 Source: CRAN
 Version: 1.4.3
@@ -298,6 +324,12 @@ Source: CRAN
 Version: 1.0.0
 Hash: 7d9b717abcec656ae7c5c982d72b75e5
 Requires: R6, RColorBrewer, Rcpp, labeling, munsell, viridisLite
+
+Package: sessioninfo
+Source: CRAN
+Version: 1.1.1
+Hash: cebf58aa0945e47a46f23b3b60fac24f
+Requires: cli, withr
 
 Package: stringi
 Source: CRAN
@@ -372,3 +404,9 @@ Source: CRAN
 Version: 1.2.0
 Hash: c6b404c18c699513de6753858d8617a6
 Requires: Rcpp
+
+Package: xopen
+Source: CRAN
+Version: 1.0.0
+Hash: 8b6f6fc52d89c441e9532ba6efc47961
+Requires: processx
