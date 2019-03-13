@@ -16,14 +16,22 @@ test_that("scale_colour_nhs calls getNhsPalette", {
   stub(scale_colour_nhs, "getNhsPalette", m)
 
   scale_colour_nhs()
+  scale_colour_nhs(reverse = FALSE)
+  scale_colour_nhs(reverse = TRUE)
 
-  expect_called(m, 1)
+  expect_called(m, 3)
 
   expect_call(m, 1, getNhsPalette(palette = palette, reverse = reverse))
   expect_args(m, 1, palette = "main", reverese = FALSE)
+
+  expect_call(m, 2, getNhsPalette(palette = palette, reverse = reverse))
+  expect_args(m, 2, palette = "main", reverese = FALSE)
+
+  expect_call(m, 3, getNhsPalette(palette = palette, reverse = reverse))
+  expect_args(m, 3, palette = "main", reverese = TRUE)
 })
 
-test_that("scale_colour_nhs calls discrete_scale when discrete is left as default", {
+discrete_scale_helper <- function(code, discrete) {
   d <- mock()
   c <- mock()
   p <- function(n) { n }
@@ -32,47 +40,29 @@ test_that("scale_colour_nhs calls discrete_scale when discrete is left as defaul
   stub(scale_colour_nhs, "scale_colour_gradientn", c)
   stub(scale_colour_nhs, "getNhsPalette", mock(p))
 
-  scale_colour_nhs()
+  code <- substitute(code)
+  eval(code)
 
-  expect_called(d, 1)
-  expect_called(c, 0)
+  expect_called(d, as.numeric( discrete))
+  expect_called(c, as.numeric(!discrete))
 
-  expect_call(d, 1, discrete_scale("colour", paste0("nhstheme_", palette), palette = pal))
-  expect_args(d, 1, "colour", "nhstheme_main", palette = p)
+  if (discrete) {
+    expect_call(d, 1, discrete_scale("colour", paste0("nhstheme_", palette), palette = pal))
+    expect_args(d, 1, "colour", "nhstheme_main", palette = p)
+  } else {
+    expect_call(c, 1, scale_colour_gradientn(colours = pal(256)))
+    expect_args(c, 1, colours = p(256))
+  }
+}
+
+test_that("scale_colour_nhs calls discrete_scale when discrete is left as default", {
+  discrete_scale_helper(scale_colour_nhs(), TRUE)
 })
 
 test_that("scale_colour_nhs calls discrete_scale when discrete = TRUE", {
-  d <- mock()
-  c <- mock()
-  p <- function(n) { n }
-
-  stub(scale_colour_nhs, "discrete_scale", d)
-  stub(scale_colour_nhs, "scale_colour_gradientn", c)
-  stub(scale_colour_nhs, "getNhsPalette", mock(p))
-
-  scale_colour_nhs(discrete = TRUE)
-
-  expect_called(d, 1)
-  expect_called(c, 0)
-
-  expect_call(d, 1, discrete_scale("colour", paste0("nhstheme_", palette), palette = pal))
-  expect_args(d, 1, "colour", "nhstheme_main", palette = p)
+  discrete_scale_helper(scale_colour_nhs(discrete = TRUE), TRUE)
 })
 
-test_that("scale_colour_nhs calls scale_colour_gradientn when dicrete = FALSE", {
-  d <- mock()
-  c <- mock()
-  p <- function(n) { n }
-
-  stub(scale_colour_nhs, "discrete_scale", d)
-  stub(scale_colour_nhs, "scale_colour_gradientn", c)
-  stub(scale_colour_nhs, "getNhsPalette", mock(p))
-
-  scale_colour_nhs(discrete = FALSE)
-
-  expect_called(d, 0)
-  expect_called(c, 1)
-
-  expect_call(c, 1, scale_colour_gradientn(colours = pal(256)))
-  expect_args(c, 1, colours = p(256))
+test_that("scale_colour_nhs calls scale_fill_gradientn when discrete = FALSE", {
+  discrete_scale_helper(scale_colour_nhs(discrete = FALSE), FALSE)
 })
