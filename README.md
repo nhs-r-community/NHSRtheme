@@ -10,5 +10,5 @@ If you do not have the devtools package installed, you will have to run the firs
 
 ```{r}
 # install.packages('devtools')
-devtools::install_github('bbc/bbplot')
+devtools::install_github('tomjemmett/nhsrtheme')
 ```
