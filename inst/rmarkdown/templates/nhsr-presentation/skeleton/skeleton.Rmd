@@ -1,0 +1,50 @@
+---
+title: "Presentation"
+author: "[author](mailto:your@email.com)"
+institute: "[organisation](https://www.nhs.uk/)"
+output:
+  nhsrtheme::su_presentation: default
+---
+
+```{r setup, include = FALSE}
+library(knitr)
+library(tidyverse)
+library(nhsrtheme)
+# set default options
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               dpi = 300,
+               dev.args = list(type = "cairo"))
+
+theme_set(nhs)
+# uncomment the following lines if you want to use the NHS-R theme colours by default
+# scale_fill_continuous <- partial(scale_fill_nhs, discrete = FALSE)
+# scale_fill_discrete <- partial(scale_fill_nhs, discrete = TRUE)
+# scale_colour_continuous <- partial(scale_colour_nhs, discrete = FALSE)
+# scale_colour_discrete <- partial(scale_colour_nhs, discrete = TRUE)
+```
+
+class: inverse
+
+# Slide Title
+
+text on a slide
+
+---
+
+# A slide where bullets appear
+
+* first point
+
+--
+
+* second point
+
+--
+
+* third point
+
+[//]: <> (URL's / References --------------------------------------------------)
+[email]:mailto:`r Sys.getenv("MY_EMAIL")`
+[su]:https://www.strategyunitwm.nhs.uk/

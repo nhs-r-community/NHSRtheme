@@ -9,14 +9,15 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Imports:
   dplyr (>= 0.8.0),
   ggplot2 (>= 3.1.0),
   purrr (>= 0.3.0),
-  scales (>= 1.0.0)
+  scales (>= 1.0.0),
+  xaringan (>= 0.17.0)
 Suggests:
-  roxygen2 (>= 6.1.1),
+  roxygen2 (>= 7.1.1),
   testthat (>= 0.4.1),
   usethis (>= 1.4.0), 
   devtools (>= 2.0.1)
