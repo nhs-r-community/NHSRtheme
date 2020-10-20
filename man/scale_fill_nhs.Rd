@@ -4,8 +4,7 @@
 \alias{scale_fill_nhs}
 \title{Fill scale constructor for NHS theme colours}
 \usage{
-scale_fill_nhs(palette = "main", discrete = TRUE, reverse = FALSE,
-  ...)
+scale_fill_nhs(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
 \item{palette}{Character name of palette in NHS theme}
