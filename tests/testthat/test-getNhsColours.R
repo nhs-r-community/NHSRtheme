@@ -37,7 +37,7 @@ test_that("get_nhs_colours throws an error if an unrecognised colour name is pas
 test_that("get_nhs_colours returns specific colours if a section is passed", {
   all_colours <- readRDS("get_nhs_colours.rds")
 
-  sections = list(
+  sections <- list(
     `blues` = c("DarkBlue", "Blue", "BrightBlue", "LightBlue", "AquaBlue"),
     `neutrals` = c("Black", "DarkGrey", "MidGrey", "PaleGrey"),
     `support greens` = c("DarkGreen", "Green", "LightGreen", "AquaGreen"),

@@ -34,7 +34,7 @@ test_that("scale_fill_nhs calls get_nhs_palette", {
 discrete_scale_helper <- function(code, discrete) {
   d <- mock()
   c <- mock()
-  p <- function(n) { n }
+  p <- identity
 
   stub(scale_fill_nhs, "discrete_scale", d)
   stub(scale_fill_nhs, "scale_fill_gradientn", c)
@@ -43,14 +43,14 @@ discrete_scale_helper <- function(code, discrete) {
   code <- substitute(code)
   eval(code)
 
-  expect_called(d, as.numeric( discrete))
+  expect_called(d, as.numeric(discrete))
   expect_called(c, as.numeric(!discrete))
 
   if (discrete) {
-    expect_call(d, 1, discrete_scale("fill", paste0("nhstheme_", palette), palette = pal))
+    expect_call(d, 1, discrete_scale("fill", paste0("nhstheme_", palette), palette = pal)) # nolint
     expect_args(d, 1, "fill", "nhstheme_main", palette = p)
   } else {
-    expect_call(c, 1, scale_fill_gradientn(colours = pal(256)))
+    expect_call(c, 1, scale_fill_gradientn(colours = pal(256))) # nolint
     expect_args(c, 1, colours = p(256))
   }
 }

@@ -52,7 +52,7 @@ test_that("get_nhs_palette calls get_nhs_colours", {
 
 test_that("get_nhs_palette doesn't call rev by default", {
   m <- mock(c("#000000", "#ffffff"))
-  stub(get_nhs_palette, 'rev', m)
+  stub(get_nhs_palette, "rev", m)
 
   get_nhs_palette()
 
@@ -61,7 +61,7 @@ test_that("get_nhs_palette doesn't call rev by default", {
 
 test_that("get_nhs_palette doesn't call rev when argument is false", {
   m <- mock(c("#000000", "#ffffff"))
-  stub(get_nhs_palette, 'rev', m)
+  stub(get_nhs_palette, "rev", m)
 
   get_nhs_palette(reverse = FALSE)
 
@@ -69,11 +69,11 @@ test_that("get_nhs_palette doesn't call rev when argument is false", {
 })
 
 test_that("get_nhs_palette calls rev when argument is true", {
-  pal <- c("a","b","c")
+  pal <- c("a", "b", "c")
 
   m <- mock(c("#000000", "#ffffff"))
-  stub(get_nhs_palette, 'rev', m)
-  stub(get_nhs_palette, 'get_nhs_colours', mock(pal))
+  stub(get_nhs_palette, "rev", m)
+  stub(get_nhs_palette, "get_nhs_colours", mock(pal))
 
   get_nhs_palette(reverse = TRUE)
 

@@ -3,7 +3,7 @@ library(mockery)
 library(testthat)
 
 test_that("get_nhs_colour_tints returns a character vector", {
-  colours <- get_nhs_colour_tints(seq(0,1,0.1))
+  colours <- get_nhs_colour_tints(seq(0, 1, 0.1))
   expect_is(colours, "character")
 })
 
@@ -21,9 +21,9 @@ test_that("get_nhs_colour_tints calls get_nhs_colours", {
   m <- mock()
   stub(get_nhs_colour_tints, "get_nhs_colours", m)
 
-  get_nhs_colour_tints(seq(0,1,0.1))
-  get_nhs_colour_tints(seq(0,1,0.1), "Blue", "Green")
-  get_nhs_colour_tints(seq(0,1,0.1), section = "blues")
+  get_nhs_colour_tints(seq(0, 1, 0.1))
+  get_nhs_colour_tints(seq(0, 1, 0.1), "Blue", "Green")
+  get_nhs_colour_tints(seq(0, 1, 0.1), section = "blues")
 
   expect_called(m, 3)
 

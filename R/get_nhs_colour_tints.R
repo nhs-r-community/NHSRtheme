@@ -18,25 +18,24 @@
 #' get_nhs_colour_tints(seq(0.0,0.8,0.2))
 #' get_nhs_colour_tints(seq(0.0,0.8,0.2), "Blue", "Red")
 #' get_nhs_colour_tints(seq(0.0,0.8,0.2), section = "blues")
-get_nhs_colour_tints <- function (tints, ..., section = NULL) {
+get_nhs_colour_tints <- function(tints, ..., section = NULL) {
   if (!is.numeric(tints) || any(tints < 0) || any(tints > 1))  {
     stop("tints must be a numeric vector between 0 and 1")
   }
 
   colours <- get_nhs_colours(..., section = section)
 
-  getTints <- function(colour) {
-    colTint <- function(tint) {
+  get_tints <- function(colour) {
+    col_tint <- function(tint) {
       x <- as.vector(col2rgb(colour))
-      x <- sum(round(x + (255-x)*tint) * 16^c(4, 2, 0))
+      x <- sum(round(x + (255 - x) * tint) * 16^c(4, 2, 0))
       sprintf("#%06X", x)
     }
 
-    map_chr(tints, colTint) %>%
+    map_chr(tints, col_tint) %>%
       set_names(percent(tints, 1))
   }
 
-  colours <- map(colours, getTints) %>% unlist
-
-  return (colours)
+  map(colours, get_tints) %>%
+    unlist()
 }

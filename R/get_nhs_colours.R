@@ -16,7 +16,7 @@
 #' get_nhs_colours("Blue")
 #' get_nhs_colours("Blue", "Red")
 #' get_nhs_colours(section = "blues")
-get_nhs_colours <- function (..., section = NULL) {
+get_nhs_colours <- function(..., section = NULL) {
   dots <- unique(c(...))
   colours <- c()
 
@@ -71,10 +71,10 @@ get_nhs_colours <- function (..., section = NULL) {
   if (!is.null(dots)) {
     colours <- colours[dots]
 
-    if(colours %>% map_lgl(is.na) %>% any) {
+    if (colours %>% map_lgl(is.na) %>% any) {
       stop("Invalid colours specified")
     }
   }
 
-  return (colours)
+  colours
 }

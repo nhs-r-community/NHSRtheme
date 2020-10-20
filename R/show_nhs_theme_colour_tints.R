@@ -22,11 +22,11 @@ show_nhs_theme_colour_tints <- function(tints, colour) {
   tibble(name = names(colours)) %>%
     mutate(n = 100 - row_number(),
            n = sprintf("%03d%s", n, name)) %>%
-    ggplot(aes(n, 1, fill=name, label = name)) +
+    ggplot(aes(n, 1, fill = name, label = name)) +
     geom_tile() +
     geom_label(fill = "white") +
     scale_fill_manual(values = colours) +
-    scale_x_discrete(expand = c(0,0)) +
+    scale_x_discrete(expand = c(0, 0)) +
     scale_y_continuous(expand = c(0, 0)) +
     coord_flip() +
     #theme_void() +

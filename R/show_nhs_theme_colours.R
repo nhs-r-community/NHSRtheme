@@ -23,12 +23,12 @@ show_nhs_theme_colours <- function() {
     group_by(section) %>%
     mutate(n = 10 - row_number(),
            n = paste0(n, name)) %>%
-    ggplot(aes(n, 1, fill=name, label = name)) +
+    ggplot(aes(n, 1, fill = name, label = name)) +
     geom_tile() +
     geom_label(fill = "white") +
     scale_fill_manual(values = get_nhs_colours()) +
     facet_wrap(vars(section), ncol = 2, scales = "free") +
-    scale_x_discrete(expand = c(0,0)) +
+    scale_x_discrete(expand = c(0, 0)) +
     scale_y_continuous(expand = c(0, 0)) +
     coord_flip() +
     #theme_void() +
