@@ -11,11 +11,11 @@
 #' @export
 #'
 #' @examples
-#' showNhsThemeColours()
-showNhsThemeColours <- function() {
+#' show_nhs_theme_colours()
+show_nhs_theme_colours <- function() {
   c("blues", "neutrals", "support greens", "highlights") %>%
     map_dfr(function(s) {
-      colours <- getNhsColours(section = s)
+      colours <- get_nhs_colours(section = s)
       tibble(section = s,
              name = names(colours),
              colour = unname(colours))
@@ -26,7 +26,7 @@ showNhsThemeColours <- function() {
     ggplot(aes(n, 1, fill=name, label = name)) +
     geom_tile() +
     geom_label(fill = "white") +
-    scale_fill_manual(values = getNhsColours()) +
+    scale_fill_manual(values = get_nhs_colours()) +
     facet_wrap(vars(section), ncol = 2, scales = "free") +
     scale_x_discrete(expand = c(0,0)) +
     scale_y_continuous(expand = c(0, 0)) +

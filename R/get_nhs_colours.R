@@ -12,11 +12,11 @@
 #' @export
 #'
 #' @examples
-#' getNhsColours()
-#' getNhsColours("Blue")
-#' getNhsColours("Blue", "Red")
-#' getNhsColours(section = "blues")
-getNhsColours <- function (..., section = NULL) {
+#' get_nhs_colours()
+#' get_nhs_colours("Blue")
+#' get_nhs_colours("Blue", "Red")
+#' get_nhs_colours(section = "blues")
+get_nhs_colours <- function (..., section = NULL) {
   dots <- unique(c(...))
   colours <- c()
 

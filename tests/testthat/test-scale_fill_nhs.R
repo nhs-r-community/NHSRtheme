@@ -11,9 +11,9 @@ test_that("scale_fill_nhs returns a ggplot scale", {
             c("ScaleContinuous", "Scale", "ggproto", "gg"))
 })
 
-test_that("scale_fill_nhs calls getNhsPalette", {
+test_that("scale_fill_nhs calls get_nhs_palette", {
   m <- mock()
-  stub(scale_fill_nhs, "getNhsPalette", m)
+  stub(scale_fill_nhs, "get_nhs_palette", m)
 
   scale_fill_nhs()
   scale_fill_nhs(reverse = FALSE)
@@ -21,13 +21,13 @@ test_that("scale_fill_nhs calls getNhsPalette", {
 
   expect_called(m, 3)
 
-  expect_call(m, 1, getNhsPalette(palette = palette, reverse = reverse))
+  expect_call(m, 1, get_nhs_palette(palette = palette, reverse = reverse))
   expect_args(m, 1, palette = "main", reverese = FALSE)
 
-  expect_call(m, 2, getNhsPalette(palette = palette, reverse = reverse))
+  expect_call(m, 2, get_nhs_palette(palette = palette, reverse = reverse))
   expect_args(m, 2, palette = "main", reverese = FALSE)
 
-  expect_call(m, 3, getNhsPalette(palette = palette, reverse = reverse))
+  expect_call(m, 3, get_nhs_palette(palette = palette, reverse = reverse))
   expect_args(m, 3, palette = "main", reverese = TRUE)
 })
 
@@ -38,7 +38,7 @@ discrete_scale_helper <- function(code, discrete) {
 
   stub(scale_fill_nhs, "discrete_scale", d)
   stub(scale_fill_nhs, "scale_fill_gradientn", c)
-  stub(scale_fill_nhs, "getNhsPalette", mock(p))
+  stub(scale_fill_nhs, "get_nhs_palette", mock(p))
 
   code <- substitute(code)
   eval(code)

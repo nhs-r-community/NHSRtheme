@@ -15,9 +15,9 @@
 #' @export
 #'
 #' @examples
-#' showNhsThemeColourTints(seq(0,1,0.1), "Blue")
-showNhsThemeColourTints <- function(tints, colour) {
-  colours <- getNhsColourTints(tints, colour)
+#' show_nhs_theme_colour_tints(seq(0,1,0.1), "Blue")
+show_nhs_theme_colour_tints <- function(tints, colour) {
+  colours <- get_nhs_colour_tints(tints, colour)
 
   tibble(name = names(colours)) %>%
     mutate(n = 100 - row_number(),

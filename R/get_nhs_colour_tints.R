@@ -15,15 +15,15 @@
 #' @export
 #'
 #' @examples
-#' getNhsColourTints(seq(0.0,0.8,0.2))
-#' getNhsColourTints(seq(0.0,0.8,0.2), "Blue", "Red")
-#' getNhsColourTints(seq(0.0,0.8,0.2), section = "blues")
-getNhsColourTints <- function (tints, ..., section = NULL) {
+#' get_nhs_colour_tints(seq(0.0,0.8,0.2))
+#' get_nhs_colour_tints(seq(0.0,0.8,0.2), "Blue", "Red")
+#' get_nhs_colour_tints(seq(0.0,0.8,0.2), section = "blues")
+get_nhs_colour_tints <- function (tints, ..., section = NULL) {
   if (!is.numeric(tints) || any(tints < 0) || any(tints > 1))  {
     stop("tints must be a numeric vector between 0 and 1")
   }
 
-  colours <- getNhsColours(..., section = section)
+  colours <- get_nhs_colours(..., section = section)
 
   getTints <- function(colour) {
     colTint <- function(tint) {

@@ -3,7 +3,6 @@
 \docType{package}
 \name{nhsrtheme}
 \alias{nhsrtheme}
-\alias{nhsrtheme-package}
 \title{\code{nhsrtheme} package}
 \description{
 NHS Theme

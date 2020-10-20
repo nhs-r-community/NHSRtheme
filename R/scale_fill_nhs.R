@@ -9,7 +9,7 @@
 #' @importFrom ggplot2 discrete_scale scale_fill_gradientn
 #' @export
 scale_fill_nhs <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
-  pal <- getNhsPalette(palette = palette, reverse = reverse)
+  pal <- get_nhs_palette(palette = palette, reverse = reverse)
 
   if (discrete) {
     discrete_scale("fill", paste0("nhstheme_", palette), palette = pal, ...)
