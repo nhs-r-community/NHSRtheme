@@ -1,5 +1,6 @@
 context("test-show_nhs_theme_colours")
 library(testthat)
+library(mockery)
 
 test_that("show_nhs_theme_colours returns a ggplot object", {
   plot <- show_nhs_theme_colours()

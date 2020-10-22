@@ -1,6 +1,8 @@
 context("test-get_nhs_colours")
 library(dplyr)
 library(purrr)
+library(mockery)
+library(testthat)
 
 test_that("get_nhs_colours returns a character vector", {
   colours <- get_nhs_colours()
