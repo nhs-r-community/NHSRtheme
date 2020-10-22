@@ -1,9 +1,25 @@
 ---
-title: "Presentation"
-author: "[author](mailto:your@email.com)"
-institute: "[organisation](https://www.nhs.uk/)"
+title: "Presentation title"
+subtitle: "Presentation subtitle"
+author: "Author Name"
+institute: "NHS Organisation"
+date: "Presentation Date"
 output:
-  nhsrtheme::su_presentation: default
+  xaringan::moon_reader:
+    css: 
+      - default
+      - css/nhsr.css
+      - css/nhsr-fonts.css
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      after_body: [css/insert-logo.html]
 ---
 
 ```{r setup, include = FALSE}
@@ -17,7 +33,6 @@ opts_chunk$set(echo = FALSE,
                dpi = 300,
                dev.args = list(type = "cairo"))
 
-theme_set(nhs)
 # uncomment the following lines if you want to use the NHS-R theme colours by default
 # scale_fill_continuous <- partial(scale_fill_nhs, discrete = FALSE)
 # scale_fill_discrete <- partial(scale_fill_nhs, discrete = TRUE)
@@ -25,15 +40,26 @@ theme_set(nhs)
 # scale_colour_discrete <- partial(scale_colour_nhs, discrete = TRUE)
 ```
 
-class: inverse
+class: title-slide, left, bottom
 
-# Slide Title
+# `r rmarkdown::metadata$title`
+----
+## **`r rmarkdown::metadata$subtitle`**
+### `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$date`
 
-text on a slide
+---
+class: inverse, middle, center
+
+# An inverse slide
+
+Often used for transitions
 
 ---
 
 # A slide where bullets appear
+
+--
 
 * first point
 
@@ -44,7 +70,3 @@ text on a slide
 --
 
 * third point
-
-[//]: <> (URL's / References --------------------------------------------------)
-[email]:mailto:`r Sys.getenv("MY_EMAIL")`
-[su]:https://www.strategyunitwm.nhs.uk/
