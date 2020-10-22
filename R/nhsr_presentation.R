@@ -11,7 +11,7 @@
 #'
 #' @param ... additional arguments to pass to [xaringan::moon_reader()]
 #'
-#' @return R Markdown output format to pass to \code{\link{render}}
+#' @return R Markdown output format to pass to [rmarkdown::render()]
 #'
 #' @importFrom xaringan moon_reader
 #'
@@ -26,15 +26,12 @@
 #' @md
 nhsr_presentation <- function(...) {
 
-  ratio <- match.arg(ratio)
-
   # get the locations of resource files located within the package
   css <- system.file("rmarkdown/templates/nhsr-presentation",
                      "nhsr_xaringan.css",
-                     package = "nhsrtheme"
-  )
+                     package = "nhsrtheme")
 
-  dots <- list(...)
+  # dots <- list(...)
 
   if (is.null(dots$nature)) {
     dots$nature <- list(

@@ -10,7 +10,7 @@ nhsr_presentation(...)
 \item{...}{additional arguments to pass to \code{\link[xaringan:moon_reader]{xaringan::moon_reader()}}}
 }
 \value{
-R Markdown output format to pass to \code{\link{render}}
+R Markdown output format to pass to \code{\link[rmarkdown:render]{rmarkdown::render()}}
 }
 \description{
 This output format is based off of \code{\link[xaringan:moon_reader]{xaringan::moon_reader()}} and produces an
