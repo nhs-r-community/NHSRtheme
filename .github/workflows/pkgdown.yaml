@@ -74,7 +74,7 @@ jobs:
                               output_dir = "samples")
           }
 
-          git("add" "-A", ".")
+          git("add", "-A", ".")
           git("commit", "--allow-empty", "-m", "renders samples")
           git("push", "--force", "origin", "HEAD: gh-pages")
         shell: Rscript {0}
