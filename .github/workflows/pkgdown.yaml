@@ -70,5 +70,5 @@ jobs:
 
           git2r::add(path = "samples")
           git2r::commit(message = "renders samples")
-          git2r::push()
+          git2r::push(credentials = git2r::cred_token())
         shell: Rscript {0}
