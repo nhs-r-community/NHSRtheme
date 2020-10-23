@@ -39,6 +39,28 @@ jobs:
       - name: Install package
         run: R CMD INSTALL .
 
+      - name: Generate samples
+        run: |
+          # generate sample of slides
+
+          templates_path <- "inst/rmarkdown/templates"
+          templates <- dir(templates_path)
+
+          if (!dir.exists("docs/samples")) {
+            dir.create("docs/samples", recursive = TRUE)
+          }
+
+          for (t in templates) {
+            rmd_path <- file.path(templates_path, t, "skeleton", "skeleton.Rmd")
+            out_path <- "docs/samples"
+
+            rmarkdown::render(rmd_path,
+                              output_file = paste0(t, ".html"),
+                              output_dir = out_path)
+          }
+        shell: Rscript {0}
+
+
       - name: Deploy package
         run: |
           git config --local user.email "actions@github.com"
