@@ -44,3 +44,33 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'
+
+      - name: Generate samples
+        run: |
+          # generate sample of slides
+
+          install.packages("git2r")
+
+          git2r::fetch(name = "origin")
+          git2r::checkout(branch = "gh-pages")
+
+          # generate sample of slides
+
+          templates_path <- system.file("rmarkdown", "templates", package = "nhsrtheme")
+          templates <- dir(templates_path)
+
+          if (!dir.exists("samples")) {
+            dir.create("samples", recursive = TRUE)
+          }
+
+          for (t in templates) {
+            rmarkdown::render(file.path(templates_path, t, "skeleton", "skeleton.Rmd"),
+                              output_file = paste0(t, ".html"),
+                              output_dir = "samples")
+          }
+
+          git2r::add(path = "samples")
+          git2r::commit(message = "renders samples")
+          cred <- git2r::cred_token()
+          git2r::push(name = "origin", refspec = "gh-pages", credentials = cred, force = TRUE)
+        shell: Rscript {0}

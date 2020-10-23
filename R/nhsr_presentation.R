@@ -25,30 +25,46 @@
 #' @export
 #' @md
 nhsr_presentation <- function(...) {
+  dots <- list(...)
 
-  # get the locations of resource files located within the package
-  css <- system.file("rmarkdown/templates/nhsr-presentation",
-                     "nhsr_xaringan.css",
-                     package = "nhsrtheme")
+  if (!is.null(dots$self_contained)) {
+    stop("self_contained parameter cannot be set")
+  }
+  dots$self_contained <- TRUE
 
-  # dots <- list(...)
+  if (!is.null(dots$seal)) {
+    stop("seal parameter cannot be set")
+  }
+  dots$seal <- FALSE
 
+  css_path <- system.file("rmarkdown", "templates", "nhsr-presentation", "css",
+                          package = "nhsrtheme")
+
+  # if css has not been passed in as an argument, use the default xaringan css and this themes css files
+  if (is.null(dots$css)) {
+    files <- dir(css_path, pattern = "\\.css$", full.names = TRUE)
+    dots$css <- c("default", files)
+  }
+
+  # if nature has not been passed in as an argument, use defaults
   if (is.null(dots$nature)) {
     dots$nature <- list(
       ratio = "16:9",
       highlightLines = TRUE,
       countIncrementalSlides = FALSE,
+      highlightLanguage = "R",
       highlightStyle = "github"
     )
   }
 
-  if (is.null(dots$self_contained)) {
-    dots$self_contained <- TRUE
+  if (is.null(dots$includes)) {
+    dots$includes <- list()
   }
 
-  # call the base word_document function
-  xaringan::moon_reader(
-    css = c("default", css),
-    dots
-  )
+  if (is.null(dots$includes$after_body)) {
+    dots$includes$after_body <- file.path(css_path, "insert-logo.html")
+  }
+
+  # call the main xaringan moon_reader function
+  do.call(xaringan::moon_reader, dots)
 }
