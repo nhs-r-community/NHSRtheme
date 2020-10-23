@@ -14,11 +14,9 @@ test_that("it calls xaringan::moon_reader with default arguments", {
 
   expect_equal(ma$self_contained, TRUE)
   expect_equal(ma$seal, FALSE)
-  expect_equal(ma$css[[1]], "default")
-  expect_true(grepl("inst/rmarkdown/templates/nhsr-presentation/css/nhsr-fonts\\.css$",
-                    ma$css[[2]]))
-  expect_true(grepl("inst/rmarkdown/templates/nhsr-presentation/css/nhsr\\.css",
-                    ma$css[[3]]))
+  expect_true("default" %in% ma$css)
+  expect_true("nhsr-fonts.css" %in% gsub(".*/", "", ma$css))
+  expect_true("nhsr.css" %in% gsub(".*/", "", ma$css))
   expect_equal(ma$nature, list(
     ratio = "16:9",
     highlightLines = TRUE,
