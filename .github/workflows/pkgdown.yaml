@@ -49,10 +49,15 @@ jobs:
         run: |
           # generate sample of slides
 
-          install.packages("git2r")
+          install.packages("callr")
 
-          git2r::fetch(name = "origin")
-          git2r::checkout(branch = "gh-pages")
+          git <- function (..., echo_cmd = TRUE, echo = TRUE, error_on_status = TRUE) {
+            callr::run("git", c(...), echo_cmd = echo_cmd, echo = echo,
+                error_on_status = error_on_status)
+          }
+
+          git("remote", "set-branches", "origin", "gh-pages")
+          git("fetch", "origin", "gh-pages")
 
           # generate sample of slides
 
@@ -69,8 +74,7 @@ jobs:
                               output_dir = "samples")
           }
 
-          git2r::add(path = "samples")
-          git2r::commit(message = "renders samples")
-          cred <- git2r::cred_token()
-          git2r::push(name = "origin", refspec = "refs/origin/gh-pages", credentials = cred, force = TRUE)
+          git("add" "-A", ".")
+          git("commit", "--allow-empty", "-m", "renders samples")
+          git("push", "--force", "origin", "HEAD: gh-pages")
         shell: Rscript {0}
