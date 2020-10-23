@@ -85,6 +85,6 @@ jobs:
           withr::with_dir(dest_dir, {
             git("add", "-A", ".")
             git("commit", "--allow-empty", "-m", "renders samples")
-            git("push", "--force", "origin", "HEAD: gh-pages")
+            git("push", "--force", "origin", "HEAD:gh-pages")
           })
         shell: Rscript {0}
