@@ -58,7 +58,7 @@ Often used for transitions
 
 ---
 
-# A slide where bullets appear
+# Bullets and text color
 
 --
 
@@ -71,3 +71,53 @@ Often used for transitions
 --
 
 * third point
+
+--
+
+-----
+
+You can emphasize text with color:
+
+* .blue[Blue]
+* .green[Green]
+* .pink[Pink]
+* .red[Red]
+* .warmyellow[Warm Yellow]
+
+--
+
+And make it **bold** or _italicized_ using Markdown:
+
+* .blue[**Bold** or _italicized_]
+* .green[**Bold** or _italicized_]
+* .pink[**Bold** or _italicized_]
+* .red[**Bold** or _italicized_]
+* .warmyellow[**Bold** or _italicized_]
+
+---
+
+# Line highlighting
+
+An example of using the trailing comment `#<<` to highlight lines:
+
+### Code
+
+````markdown
+`r ''````{r tidy=FALSE}
+library(ggplot2)
+ggplot(mtcars) + 
+  aes(mpg, disp) + 
+  geom_point() +   #<<
+  geom_smooth()    #<<
+```
+````
+
+### Output
+
+```{r tidy=FALSE, eval=FALSE, echo=TRUE}
+library(ggplot2)
+ggplot(mtcars) + 
+  aes(mpg, disp) + 
+  geom_point() +   #<<
+  geom_smooth()    #<<
+```
