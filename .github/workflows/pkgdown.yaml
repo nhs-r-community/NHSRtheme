@@ -64,8 +64,8 @@ jobs:
           git("remote", "set-branches", "origin", "gh-pages")
           git("fetch", "origin", "gh-pages")
 
-          git("worktree", "add", "--track", "-B", "gh-pages", dest_dir, paste0(remote, "/", branch))
-          on.exit(git("worktree", "remove",dest_dir), add = TRUE)
+          git("worktree", "add", "--track", "-B", "gh-pages", dest_dir, "origin/gh-pages")
+          on.exit(git("worktree", "remove", dest_dir), add = TRUE)
 
           # generate sample of slides
 
