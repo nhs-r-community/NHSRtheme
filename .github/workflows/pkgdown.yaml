@@ -50,6 +50,11 @@ jobs:
           # generate sample of slides
 
           install.packages("callr")
+          install.packages("fs")
+          install.packages("withr")
+
+          dest_dir <- fs::dir_create(fs::file_temp())
+          on.exit(fs::dir_delete(dest_dir))
 
           git <- function (..., echo_cmd = TRUE, echo = TRUE, error_on_status = TRUE) {
             callr::run("git", c(...), echo_cmd = echo_cmd, echo = echo,
@@ -59,22 +64,27 @@ jobs:
           git("remote", "set-branches", "origin", "gh-pages")
           git("fetch", "origin", "gh-pages")
 
+          git("worktree", "add", "--track", "-B", "gh-pages", dest_dir, paste0(remote, "/", branch))
+          on.exit(git("worktree", "remove",dest_dir), add = TRUE)
+
           # generate sample of slides
 
           templates_path <- system.file("rmarkdown", "templates", package = "nhsrtheme")
           templates <- dir(templates_path)
 
-          if (!dir.exists("samples")) {
+          if (!dir.exists(file.path(dest_dir, "samples"))) {
             dir.create("samples", recursive = TRUE)
           }
 
           for (t in templates) {
             rmarkdown::render(file.path(templates_path, t, "skeleton", "skeleton.Rmd"),
                               output_file = paste0(t, ".html"),
-                              output_dir = "samples")
+                              output_dir = file.path(dest_dir, "samples"))
           }
 
-          git("add", "-A", ".")
-          git("commit", "--allow-empty", "-m", "renders samples")
-          git("push", "--force", "origin", "HEAD: gh-pages")
+          withr::with_dir(dest_dir, {
+            git("add", "-A", ".")
+            git("commit", "--allow-empty", "-m", "renders samples")
+            git("push", "--force", "origin", "HEAD: gh-pages")
+          })
         shell: Rscript {0}
