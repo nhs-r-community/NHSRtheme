@@ -72,5 +72,5 @@ jobs:
           git2r::add(path = "samples")
           git2r::commit(message = "renders samples")
           cred <- git2r::cred_token()
-          git2r::push(name = "origin", refspec = "gh-pages", credentials = cred)
+          git2r::push(name = "origin", refspec = "gh-pages", credentials = cred, force = TRUE)
         shell: Rscript {0}
