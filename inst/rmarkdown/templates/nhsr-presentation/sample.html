@@ -157,10 +157,10 @@ pre {
 
 border: none;
 box-shadow: 2px 2px 2px 2px #eee;
-padding: 0.1em; 
+padding: 0.1em;
 background: none !important;
-overflow-x: auto; 
-border-radius: 1px; 
+overflow-x: auto;
+border-radius: 1px;
 }
 
 pre code {
@@ -237,11 +237,7 @@ Often used for transitions
 
 ---
 
-<<<<<<< HEAD
-# Bullets and text color
-=======
 # Bullet points and text colors
->>>>>>> 441c03150e6ab98ac7a901c5ebe3abb712f862b6
 
 --
 
@@ -259,13 +255,9 @@ Often used for transitions
 
 -----
 
-<<<<<<< HEAD
-You can emphasize text with color:
-=======
 --
 
-You can emphasize text with:
->>>>>>> 441c03150e6ab98ac7a901c5ebe3abb712f862b6
+You can emphasize text with color:
 
 * .blue[Blue]
 * .green[Green]
@@ -275,11 +267,7 @@ You can emphasize text with:
 
 --
 
-<<<<<<< HEAD
 And make it **bold** or _italicized_ using Markdown:
-=======
-And make it **bold** or _italicized_ with markdown:
->>>>>>> 441c03150e6ab98ac7a901c5ebe3abb712f862b6
 
 * .blue[**Bold** or _italicized_]
 * .green[**Bold** or _italicized_]
@@ -288,10 +276,7 @@ And make it **bold** or _italicized_ with markdown:
 * .warmyellow[**Bold** or _italicized_]
 
 ---
-<<<<<<< HEAD
 
-# Line highlighting
-=======
 # Tables and quotes
 
 ### Table
@@ -363,8 +348,7 @@ knitr::kable(head(iris), format = 'html')
 
 ---
 
-# Code highlighting
->>>>>>> 441c03150e6ab98ac7a901c5ebe3abb712f862b6
+# Line highlighting
 
 An example of using the trailing comment `#&lt;&lt;` to highlight lines:
 
@@ -373,8 +357,8 @@ An example of using the trailing comment `#&lt;&lt;` to highlight lines:
 ````markdown
 ```{r tidy=FALSE}
 library(ggplot2)
-ggplot(mtcars) + 
-  aes(mpg, disp) + 
+ggplot(mtcars) +
+  aes(mpg, disp) +
   geom_point() +   #&lt;&lt;
   geom_smooth()    #&lt;&lt;
 ```
@@ -385,8 +369,8 @@ ggplot(mtcars) +
 
 ```r
 library(ggplot2)
-ggplot(mtcars) + 
-  aes(mpg, disp) + 
+ggplot(mtcars) +
+  aes(mpg, disp) +
 * geom_point() +
 * geom_smooth()
 ```
