@@ -133,3 +133,19 @@ ggplot(mtcars) +
   geom_point() +   #<<
   geom_smooth()    #<<
 ```
+
+---
+
+# A note about logos
+
+### NHS Organisation logo in title slide
+
+The `.title-slide` class in `nhsr.css` looks for a title slide logo within an `img` folder located within the same directory as the xaringan `.Rmd` file.
+
+### NHS logo on every slide
+
+The NHS logo can be incorporated on every slide following Garrick Aden-Buie's guidance in the blog post [xaringan Tip: Add A Logo to All of Your Slides](https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/). For this sample deck, the NHS logo is included on every non-inverse slide.
+
+For a more seamless logo experience, you can find this theme and high-resolution NHS logo files built into the [`nhsrtheme` package](https://github.com/nhs-r-community/nhsrtheme#nhs-r-theme-) developed by Tom Jemmett.
+
+.footnote[The **nhsr theme** was designed by [Silvia Canelon](https://silvia.rbind.io) for, and with feedback from, the [NHS-R Community](https://github.com/nhs-r-community), following the [NHS identity guidelines](https://www.england.nhs.uk/nhsidentity/identity-guidelines/).]
