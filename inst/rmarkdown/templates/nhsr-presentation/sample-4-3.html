@@ -217,10 +217,45 @@ font-family: 'Roboto Mono', monospace;
   <body>
     <textarea id="source">
 
-
-
-
 class: title-slide, left, bottom
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(img/logo-nhs-blue.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide-logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
 
 # Presentation title
 ----
@@ -236,7 +271,6 @@ class: inverse, middle, center
 Often used for transitions
 
 ---
-
 # Bullets and text color
 
 --
@@ -372,11 +406,11 @@ ggplot(mtcars) +
 
 ### NHS Organisation logo in title slide
 
-The `.title-slide` class in `nhsr.css` looks for a title slide logo within an `img` folder located within the same directory as the xaringan `.Rmd` file.
+The `.title-slide` class in `nhsr.css` looks for a title slide logo using the path to the image relative to your slide files.
 
 ### NHS logo on every slide
 
-The NHS logo can be incorporated on every slide following Garrick Aden-Buie&#39;s guidance in the blog post [xaringan Tip: Add A Logo to All of Your Slides](https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/). For this sample deck, the NHS logo is included on every non-inverse slide.
+The NHS logo can be incorporated on every slide using the `use_logo()` function in Garrick Aden-Buie&#39;s [xaringanExtra](https://pkg.garrickadenbuie.com/xaringanExtra/#/logo) package, or by following the guidance in his blog post [xaringan Tip: Add A Logo to All of Your Slides](https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/).
 
 For a more seamless logo experience, you can find this theme and high-resolution NHS logo files built into the [`nhsrtheme` package](https://github.com/nhs-r-community/nhsrtheme#nhs-r-theme-) developed by Tom Jemmett.
 
@@ -490,34 +524,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     if (d) el.style.backgroundImage = 'url("' + d + '")';
   }
 })({}, 'data:image/png;base64,#');</script>
-<!--Hat-tip: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/-->
-<style>
-.logo {
-  background-image: url(../img/logo-nhs-blue.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  width: 110px;
-  height: 128px;
-  z-index: 0;
-}
-</style>
-
-<script>
-document
-  .querySelectorAll(
-    '.remark-slide-content' +
-    ':not(.title-slide)' +
-    // add additional classes to exclude here, e.g.
-    ':not(.inverse)' +
-    ':not(.hide-logo)'
-  )
-  .forEach(el => {
-    el.innerHTML += '<div class="logo"></div>';
-  });
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {
