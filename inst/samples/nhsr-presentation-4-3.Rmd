@@ -5,19 +5,8 @@ author: "Author Name"
 institute: "NHS Organisation"
 date: "Presentation Date"
 output:
-  xaringan::moon_reader:
-    css: 
-      - default
-      - css/nhsr.css
-      - css/nhsr-fonts.css
-    lib_dir: libs
-    seal: false
-    self_contained: true
+  nhsrtheme::nhsr_presentation: default
     nature:
-      highlightStyle: googlecode
-      highlightLines: true
-      highlightLanguage: ["r"]
-      countIncrementalSlides: false
       ratio: "4:3"
 ---
 class: title-slide, left, bottom
