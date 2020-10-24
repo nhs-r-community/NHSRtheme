@@ -16,8 +16,9 @@ library(nhsrtheme)
 opts_chunk$set(echo = FALSE,
                fig.width = 7.252,
                fig.height = 4,
-               dpi = 300,
-               dev.args = list(type = "cairo"))
+               dpi = 300)
+# disabled for github actions
+# opts_chunk$set(dev.args = list(type = "cairo"))
 
 # uncomment the following lines if you want to use the NHS-R theme colours by default
 # scale_fill_continuous <- partial(scale_fill_nhs, discrete = FALSE)
