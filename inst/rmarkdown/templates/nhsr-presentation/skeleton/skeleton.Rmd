@@ -6,6 +6,21 @@ institute: "NHS Organisation"
 date: "Presentation Date"
 output:
   nhsrtheme::nhsr_presentation: default
+    css: 
+      - default
+      - css/nhsr.css
+      - css/nhsr-fonts.css
+    lib_dir: libs
+    seal: false
+    self_contained: TRUE
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      after_body: [css/insert-logo.html]
 ---
 
 ```{r setup, include = FALSE}

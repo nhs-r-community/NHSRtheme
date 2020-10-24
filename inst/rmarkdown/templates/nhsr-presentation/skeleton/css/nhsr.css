@@ -1,7 +1,7 @@
 /*-- LINKS/ANCHORS --*/
 a {
-  color:              #005EB8FF;
-  border-bottom:      2px solid #005EB8FF;
+  color:              #005EB8;
+  border-bottom:      2px solid #005EB8;
 }
 
 a:hover {
@@ -9,22 +9,25 @@ a:hover {
 }
 
 /*-- HEADINGS --*/
-h1 {
-  font-weight:        700;
-  color:              #005EB8FF;
+.remark-slide-content h1 {
+  color:              #005EB8;
   font-size:          45px;
 }
 
-h2 {
-  font-weight:        500;
+.remark-slide-content h2 {
   font-size:          35px;
-  color:              #005EB8FF;
+  color:              #005EB8;
 }
 
-h3 {
-  font-weight:        500;
+.remark-slide-content h3 {
   font-size:          25px;
-  color:              #005EB8FF;
+  color:              #005EB8;
+}
+
+/*-- PARAGRAPH TEXT --*/
+.remark-slide-content {
+  font-size:          20px;
+  line-height:        1.2em;
 }
 
 /*-- HORIZONTAL BARS --*/
@@ -32,15 +35,15 @@ hr {
   content:            '';
   display:            block;
   border:             none;
-  background-color:   #000000;
-  height:             2px;
+  background-color:   #231F20;
+  height:             .08em;
 }
 
 /*-- INVERSE SLIDE MODIFICATIONS --*/
 
 /*-- Slide background and text (inverse) --*/
 .inverse {
-  background-color:   #005EB8FF;
+  background-color:   #005EB8;
   color:              #FFFFFF;
   text-shadow:        none;
 }
@@ -60,21 +63,15 @@ hr {
 /*-- Footnote --*/
 .footnote {
   position:           absolute;
-  bottom:             1em;
+  bottom:             2em;
   padding-right:      4em;
-  font-size:          70%;
-  line-height:        1em;
+  font-size:          80%;
+  line-height:        1.3em;
 }
 
 /*-- Slide number --*/
 .remark-slide-number {
   color:              #000000;
-}
-
-/*-- STANDARD (PARAGRAPH) TEXT --*/
-.remark-slide-content {
-  font-size:          25px;
-  font-weight:        300;
 }
 
 /*-- CODE TEXT --*/
@@ -83,7 +80,7 @@ hr {
 .remark-code, .remark-inline-code {
   font-size:          90%;
   font-weight:        400;
-  color:              #231F20FF;
+  color:              #231F20;
   background:         #E8EDEE;
   border-radius:      3px;
   padding:            1px 1px 1px 1px;
@@ -103,14 +100,14 @@ pre {
   box-shadow:         2px 2px 2px 2px #eee;
   padding:            0.1em;                    /* padding between code chunk and border */
   background:         none !important;
-  overflow-x:         auto;
+  overflow-x:         auto;                     /* enable horizontal scrolling with overflow */
   border-radius:      1px;                      /* modify rounding of corners*/
 }
 
 /*--  --*/
 pre code {
   background:          none;
-  font-size:           1.3rem !important;
+  font-size:           18px !important;
 }
 
 /*-- CUSTOM CLASS FOR THE TITLE SLIDE --*/
@@ -127,11 +124,14 @@ pre code {
   color:               #000000;
 }
 
-.title-slide h2, .title-slide h3 {
-  line-height:         0.8em;
-}
-
 /*-- Hides slide number from title slide --*/
 .title-slide .remark-slide-number {
   display:             none;
 }
+
+/*-- CUSTOM CLASSES FOR TEXT EMPHASIS --*/
+.blue       { color:   #005EB8 }
+.green      { color:   #009639 }
+.pink       { color:   #AE2573 }
+.red        { color:   #DA291C }
+.warmyellow { color:   #FFB81C }
