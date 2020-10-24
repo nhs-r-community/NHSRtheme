@@ -53,6 +53,8 @@ jobs:
           install.packages("fs")
           install.packages("withr")
 
+          devtools::install_github("gadenbuie/xaringanExtra")
+
           dest_dir <- fs::dir_create(fs::file_temp())
           on.exit(fs::dir_delete(dest_dir))
 
