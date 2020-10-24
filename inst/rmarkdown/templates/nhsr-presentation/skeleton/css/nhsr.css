@@ -36,11 +36,7 @@ hr {
   display:            block;
   border:             none;
   background-color:   #231F20;
-<<<<<<< HEAD
   height:             .08em;
-=======
-  height:             2px;
->>>>>>> 441c03150e6ab98ac7a901c5ebe3abb712f862b6
 }
 
 /*-- INVERSE SLIDE MODIFICATIONS --*/
@@ -67,10 +63,10 @@ hr {
 /*-- Footnote --*/
 .footnote {
   position:           absolute;
-  bottom:             1em;
+  bottom:             2em;
   padding-right:      4em;
-  font-size:          70%;
-  line-height:        1em;
+  font-size:          80%;
+  line-height:        1.3em;
 }
 
 /*-- Slide number --*/
