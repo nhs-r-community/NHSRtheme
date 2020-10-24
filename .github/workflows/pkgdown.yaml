@@ -67,18 +67,17 @@ jobs:
           git("worktree", "add", "--track", "-B", "gh-pages", dest_dir, "origin/gh-pages")
           on.exit(git("worktree", "remove", dest_dir), add = TRUE)
 
-          # generate sample of slides
+          # generate samples
 
-          templates_path <- system.file("rmarkdown", "templates", package = "nhsrtheme")
-          templates <- dir(templates_path)
+          samples_path <- system.file("samples", package = "nhsrtheme")
+          samples <- dir(samples_path)
 
           if (!dir.exists(file.path(dest_dir, "samples"))) {
-            dir.create("samples", recursive = TRUE)
+            dir.create(dest_dir, "samples", recursive = TRUE)
           }
 
-          for (t in templates) {
-            rmarkdown::render(file.path(templates_path, t, "skeleton", "skeleton.Rmd"),
-                              output_file = paste0(t, ".html"),
+          for (s in samples) {
+            rmarkdown::render(file.path(samples_path, s),
                               output_dir = file.path(dest_dir, "samples"))
           }
 
