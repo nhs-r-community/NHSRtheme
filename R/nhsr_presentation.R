@@ -48,15 +48,30 @@ nhsr_presentation <- function(...) {
 
   # if nature has not been passed in as an argument, use defaults
   if (is.null(dots$nature)) {
-    dots$nature <- list(
-      ratio = "16:9",
-      highlightLines = TRUE,
-      countIncrementalSlides = FALSE,
-      highlightLanguage = "R",
-      highlightStyle = "github"
-    )
+    dots$nature <- list()
   }
 
+  if (is.null(dots$nature$ratio)) {
+    dots$nature$ratio <- "16:9"
+  }
+
+  if (is.null(dots$nature$highlightLines)) {
+    dots$nature$highlightLines <- TRUE
+  }
+
+  if (is.null(dots$nature$countIncrementalSlides)) {
+    dots$nature$countIncrementalSlides <- FALSE
+  }
+
+  if (is.null(dots$nature$highlightLanguage)) {
+    dots$nature$highlightLanguage <- "R"
+  }
+
+  if (is.null(dots$nature$highlightStyle)) {
+    dots$nature$highlightStyle = "github"
+  }
+
+  # if includes has not been passed in as an argument, use defaults
   if (is.null(dots$includes)) {
     dots$includes <- list()
   }
