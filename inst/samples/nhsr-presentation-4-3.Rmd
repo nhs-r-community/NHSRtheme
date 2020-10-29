@@ -17,7 +17,7 @@ output:
       highlightLines: true
       highlightLanguage: ["r"]
       countIncrementalSlides: false
-      ratio: "16:9"
+      ratio: "4:3"
     includes:
       after_body: [css/insert-logo.html]
 ---
@@ -26,7 +26,7 @@ class: title-slide, left, bottom
 library(knitr)
 library(tidyverse)
 library(nhsrtheme)
-library(xaringanExtra)
+library(NHSRdatasets)
 # set default options
 opts_chunk$set(echo = FALSE,
                fig.width = 7.252,
@@ -42,14 +42,12 @@ opts_chunk$set(echo = FALSE,
 # scale_colour_discrete <- partial(scale_colour_nhs, discrete = TRUE)
 ```
 
-```{r echo=FALSE}
+```{r, echo=FALSE}
 xaringanExtra::use_logo(
   image_url = "img/logo-nhs-blue.png",
   exclude_class = c("title-slide", "inverse", "hide-logo")
 )
 ```
-
-
 
 
 # `r rmarkdown::metadata$title`
@@ -66,6 +64,7 @@ class: inverse, middle, center
 Often used for transitions
 
 ---
+
 # Bullets and text color
 
 --
@@ -108,7 +107,8 @@ And make it **bold** or _italicized_ using Markdown:
 ### Table
 
 ```{r}
-knitr::kable(head(iris), format = 'html')
+data("ae_attendances")
+knitr::kable(head(ae_attendances), format = 'html')
 ```
 
 ### Quote
@@ -116,6 +116,7 @@ knitr::kable(head(iris), format = 'html')
 > This is what a quote looks like.
 
 ---
+
 # Line highlighting
 
 An example of using the trailing comment `#<<` to highlight lines:
@@ -148,7 +149,7 @@ ggplot(mtcars) +
 
 ### NHS Organisation logo in title slide
 
-The `.title-slide` class in `nhsr.css` looks for a title slide logo using the path to the image relative to your slide files.
+The `.title-slide` class in `nhsr.css` looks for a title slide logo within an `img` folder located within the same directory as the xaringan `.Rmd` file.
 
 ### NHS logo on every slide
 

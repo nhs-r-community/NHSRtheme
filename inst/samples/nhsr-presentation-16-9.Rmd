@@ -26,6 +26,7 @@ class: title-slide, left, bottom
 library(knitr)
 library(tidyverse)
 library(nhsrtheme)
+library(NHSRdatasets)
 # set default options
 opts_chunk$set(echo = FALSE,
                fig.width = 7.252,
@@ -106,7 +107,8 @@ And make it **bold** or _italicized_ using Markdown:
 ### Table
 
 ```{r}
-knitr::kable(head(iris), format = 'html')
+data("ae_attendances")
+knitr::kable(head(ae_attendances), format = 'html')
 ```
 
 ### Quote

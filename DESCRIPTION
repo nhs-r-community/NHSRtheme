@@ -21,11 +21,12 @@ Imports:
   scales (>= 1.0.0),
   xaringan (>= 0.17.0)
 Suggests:
-  roxygen2 (>= 7.1.1),
-  testthat (>= 0.4.1),
-  usethis (>= 1.4.0),
-  devtools (>= 2.0.1),
-  rmarkdown (>= 2.5.0),
-  mockery (>= 0.4.2),
-  knitr,
-  tidyverse
+    roxygen2 (>= 7.1.1),
+    testthat (>= 0.4.1),
+    usethis (>= 1.4.0),
+    devtools (>= 2.0.1),
+    rmarkdown (>= 2.5.0),
+    mockery (>= 0.4.2),
+    knitr,
+    tidyverse,
+    NHSRdatasets
