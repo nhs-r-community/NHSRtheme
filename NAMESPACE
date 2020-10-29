@@ -2,7 +2,6 @@
 
 export(get_nhs_colour_tints)
 export(get_nhs_colours)
-export(nhsr_presentation)
 export(scale_colour_nhs)
 export(scale_fill_nhs)
 export(show_nhs_theme_colour_tints)
@@ -24,4 +23,3 @@ importFrom(purrr,map_dfr)
 importFrom(purrr,map_lgl)
 importFrom(purrr,set_names)
 importFrom(scales,percent)
-importFrom(xaringan,moon_reader)

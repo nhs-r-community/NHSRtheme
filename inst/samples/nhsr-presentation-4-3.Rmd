@@ -5,9 +5,21 @@ author: "Author Name"
 institute: "NHS Organisation"
 date: "Presentation Date"
 output:
-  nhsrtheme::nhsr_presentation:
+  xaringan::moon_reader:
+    css: 
+      - default
+      - css/nhsr.css
+      - css/nhsr-fonts.css
+    lib_dir: libs
+    seal: false
     nature:
-      ratio: "4:3"
+      highlightStyle: googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      after_body: [css/insert-logo.html]
 ---
 class: title-slide, left, bottom
 ```{r setup, include = FALSE}
