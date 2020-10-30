@@ -72,12 +72,13 @@ jobs:
           # generate samples
 
           samples_path <- system.file("samples", package = "nhsrtheme")
-
-          if (dir.exists(file.path(dest_dir, "samples"))) {
-            unlink(file.path(dest_dir, "samples"), TRUE, TRUE)
+          new_samples <- file.path(dest_dir, "samples")
+          if (dir.exists(new_samples)) {
+            unlink(new_samples, TRUE, TRUE)
           }
 
-          file.copy(samples_path, dest_dir, TRUE, TRUE)
+          dir.create(new_samples)
+          file.copy(samples_path, new_samples, TRUE, TRUE)
 
           withr::with_dir(file.path("dest_dir", "samples"), {
             samples <- dir(pattern = "\\.[Rr]md$")
