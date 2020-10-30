@@ -80,7 +80,7 @@ jobs:
           dir.create(new_samples)
           file.copy(samples_path, new_samples, TRUE, TRUE)
 
-          withr::with_dir(file.path("dest_dir", "samples"), {
+          withr::with_dir(new_samples, {
             samples <- dir(pattern = "\\.[Rr]md$")
             for (s in samples) {
               rmarkdown::render(s)
