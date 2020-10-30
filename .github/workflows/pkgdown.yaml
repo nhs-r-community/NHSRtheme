@@ -78,7 +78,7 @@ jobs:
           }
 
           dir.create(new_samples)
-          file.copy(samples_path, new_samples, TRUE, TRUE)
+          file.copy(samples_path, dest_dir, TRUE, TRUE)
 
           withr::with_dir(new_samples, {
             samples <- dir(pattern = "\\.[Rr]md$")
