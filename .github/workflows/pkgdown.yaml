@@ -74,7 +74,7 @@ jobs:
           samples_path <- system.file("samples", package = "nhsrtheme")
 
           if (dir.exists(file.path(dest_dir, "samples"))) {
-            unlink(file.path(dir, "samples"), TRUE, TRUE)
+            unlink(file.path(dest_dir, "samples"), TRUE, TRUE)
           }
 
           file.copy(samples_path, dest_dir, TRUE, TRUE)
