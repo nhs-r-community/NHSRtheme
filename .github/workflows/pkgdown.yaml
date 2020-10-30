@@ -72,16 +72,20 @@ jobs:
           # generate samples
 
           samples_path <- system.file("samples", package = "nhsrtheme")
-          samples <- dir(samples_path)
 
-          if (!dir.exists(file.path(dest_dir, "samples"))) {
-            dir.create(dest_dir, "samples", recursive = TRUE)
+          if (dir.exists(file.path(dest_dir, "samples"))) {
+            unlink(file.path(dir, "samples"), TRUE, TRUE)
           }
 
-          for (s in samples) {
-            rmarkdown::render(file.path(samples_path, s),
-                              output_dir = file.path(dest_dir, "samples"))
-          }
+          file.copy(samples_path, dest_dir, TRUE, TRUE)
+
+          withr::with_dir(file.path("dest_dir", "samples"), {
+            samples <- dir(pattern = "\\.[Rr]md$")
+            for (s in samples) {
+              rmarkdown::render(s)
+              unlink(s)
+            }
+          })
 
           withr::with_dir(dest_dir, {
             git("add", "-A", ".")
