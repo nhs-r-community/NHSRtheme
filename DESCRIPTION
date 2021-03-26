@@ -3,9 +3,11 @@ Type: Package
 Title: NHS R Theme
 Version: 0.1.0
 Authors@R: c(
-    person("Tom", "Jemmett", role = c("aut", "cre"), email = "tom.jemmett@gmail.com", comment = c(ORCID = "")),
+    person("Tom", "Jemmett", role = c("aut", "cre"), email = "tom.jemmett@gmail.com", comment = c(ORCID = "0000-0002-6943-2990")),
+    person("NHS-R Community", role = "cph", email = "nhs.rcommunity@nhs.net"),
     # contributors ordered alphabetically below
-    person("Silvia", "Canelon", role = "ctb", comment = c(ORCID = "0000-0003-1709-1394"))
+    person("Silvia", "Canelon", role = "ctb", comment = c(ORCID = "0000-0003-1709-1394")),
+    person("John", "MacKintosh", role = "ctb", email = "johnmackintosh.jm@gmail.com")
     )
 Maintainer: Tom Jemmett <tom.jemmett@gmail.com>
 Description: Provides theme's based on the [https://www.england.nhs.uk/nhsidentity/](NHS Identity).
