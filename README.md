@@ -25,3 +25,53 @@ the first line in the code below as well.
 # install.packages('devtools')
 devtools::install_github('nhs-r-community/nhsrtheme')
 ```
+
+## Examples
+
+``` r
+library(ggplot2)
+library(nhsrtheme)
+df <- data.frame(x = c("a", "b", "c", "d"), y = c(3, 4, 1, 2))
+bars <- ggplot(df, aes(x, y, fill = x)) + 
+    geom_bar(stat = "identity") + 
+    labs(x = NULL, y = NULL) +
+    theme(legend.position = "none")
+```
+
+``` r
+bars + scale_fill_nhs()
+```
+
+![](man/figures/README-default_bars-1.png)<!-- -->
+
+``` r
+bars + scale_fill_nhs(palette = 'blues')
+```
+
+![](man/figures/README-blues_bars-1.png)<!-- -->
+
+``` r
+bars + scale_fill_nhs(palette = 'neutrals') 
+```
+
+![](man/figures/README-neutral_bars-1.png)<!-- -->
+
+``` r
+bars + scale_fill_nhs(palette = 'support greens')
+```
+
+![](man/figures/README-green_bars-1.png)<!-- -->
+
+``` r
+df2 <- data.frame(x = c("a", "b", "c", "d", "e", "f" ,"g", "h"), 
+                  y = c(3, 4, 1, 2, 5, 9, 7, 4))
+
+bars2 <- ggplot(df2, aes(x, y, fill = x)) + 
+    geom_bar(stat = "identity") + 
+    labs(x = NULL, y = NULL) +
+    theme(legend.position = "none")
+
+bars2 + scale_fill_nhs(palette = 'highlights')
+```
+
+![](man/figures/README-highlights_bars-1.png)<!-- -->

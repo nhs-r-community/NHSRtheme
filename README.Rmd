@@ -9,7 +9,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  fig.height = 3,
+  fig.width = 5
+ 
 )
 ```
 
@@ -31,3 +33,51 @@ If you do not have the devtools package installed, you will have to run the firs
 # install.packages('devtools')
 devtools::install_github('nhs-r-community/nhsrtheme')
 ```
+
+
+## Examples
+
+```{r,setup_bars}
+library(ggplot2)
+library(nhsrtheme)
+df <- data.frame(x = c("a", "b", "c", "d"), y = c(3, 4, 1, 2))
+bars <- ggplot(df, aes(x, y, fill = x)) + 
+    geom_bar(stat = "identity") + 
+    labs(x = NULL, y = NULL) +
+    theme(legend.position = "none")
+```
+
+
+```{r default_bars}
+bars + scale_fill_nhs()
+```
+
+```{r blues_bars}
+bars + scale_fill_nhs(palette = 'blues')
+```
+
+
+
+```{r neutral_bars}
+bars + scale_fill_nhs(palette = 'neutrals') 
+```
+
+
+```{r green_bars}
+bars + scale_fill_nhs(palette = 'support greens')
+```
+
+
+
+```{r highlights_bars}
+df2 <- data.frame(x = c("a", "b", "c", "d", "e", "f" ,"g", "h"), 
+                  y = c(3, 4, 1, 2, 5, 9, 7, 4))
+
+bars2 <- ggplot(df2, aes(x, y, fill = x)) + 
+    geom_bar(stat = "identity") + 
+    labs(x = NULL, y = NULL) +
+    theme(legend.position = "none")
+
+bars2 + scale_fill_nhs(palette = 'highlights')
+```
+
