@@ -16,17 +16,3 @@ if (getRversion() >= "2.15.1")
     "name",
     "section"
   ))
-
-# Install the required font
-.onLoad <- function(libname, pkgname) {
-  if (Sys.info()[1] == "Linux") {
-    dir.create('~/.fonts')
-    file.copy("fonts/Frutiger.ttf", "~/.fonts")
-    system('fc-cache -f ~/.fonts')
-  }
-  if (Sys.info()[1] == "Windows") {
-    extrafont::font_import(paths = "fonts",
-                           prompt = FALSE)
-    extrafont::loadfonts(device = "win")
-  }
-}

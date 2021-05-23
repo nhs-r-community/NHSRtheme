@@ -7,10 +7,9 @@
 #' @export
 theme_nhs <- function() {
 
-  # Function to help standardise the text
+  # Function to help standardise text
   nhs_element_text <- function(...) {
-    element_text(family = "Frutiger",
-                 color = "#231f20",
+    element_text(color = "#231f20",
                  ...)
   }
 
