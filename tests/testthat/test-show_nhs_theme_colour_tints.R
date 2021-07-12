@@ -10,11 +10,7 @@ test_that("show_nhs_theme_colour_tints returns a ggplot object", {
 
 test_that("show_nhs_theme_colour_tints calls get_nhs_colour_tints", {
   m <- mock(c(`Blue.0%` = "#005EB8", `Blue.10%` = "#1A6EBF"))
-
-  with_mock(
-    get_nhs_colour_tints = m,
-    show_nhs_theme_colour_tints(seq(0, 1, 0.1), "Blue")
-  )
-
+  stub(show_nhs_theme_colour_tints, "get_nhs_colour_tints", m)
+  show_nhs_theme_colour_tints(seq(0, 1, 0.1), "Blue")
   expect_call(m, 1, get_nhs_colour_tints(tints, colour))
 })
