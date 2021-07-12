@@ -5,7 +5,6 @@ library(testthat)
 test_that("show_nhs_theme_colour_tints returns a ggplot object", {
   plot <- show_nhs_theme_colour_tints(seq(0, 1, 0.1), "Blue")
   expect_is(plot, "ggplot")
-  expect_equal_to_reference(plot, "show_nhs_theme_colour_tints.rds")
 })
 
 test_that("show_nhs_theme_colour_tints calls get_nhs_colour_tints", {

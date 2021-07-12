@@ -5,7 +5,6 @@ library(mockery)
 test_that("show_nhs_theme_colours returns a ggplot object", {
   plot <- show_nhs_theme_colours()
   expect_is(plot, "ggplot")
-  expect_equal_to_reference(plot, "show_nhs_theme_colours.rds")
 })
 
 test_that("show_nhs_theme_colours calls get_nhs_colours", {
