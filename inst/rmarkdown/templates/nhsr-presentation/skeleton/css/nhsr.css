@@ -27,6 +27,10 @@ a:hover {
   color:              #005EB8;
 }
 
+li{
+   line-height:        1.5em;
+}
+
 /*-- PARAGRAPH TEXT --*/
 .remark-slide-content {
   font-size:          20px;
