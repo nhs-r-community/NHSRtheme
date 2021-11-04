@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# NHS R Theme <a href='https://nhsrcommunity.com/'><img src='man/figures/logo.png' align="right" height="80" /></a>
+# NHS-R Theme <a alt="NHS-R Community's logo" href='https://nhsrcommunity.com/'><img src='https://nhs-r-community.github.io/assets/logo/nhsr-logo.png' align="right" height="80" /></a>
 
 <!-- badges: start -->
 [![R build status](https://github.com/nhs-r-community/nhsrtheme/workflows/R-CMD-check/badge.svg)](https://github.com/nhs-r-community/nhsrtheme/actions)
