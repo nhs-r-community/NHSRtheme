@@ -8,13 +8,6 @@
 
 <title>Get's tints of the NHS identity colours — get_nhs_colour_tints • nhsrtheme</title>
 
-<!-- favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -48,7 +41,6 @@
 
 <meta property="og:title" content="Get's tints of the NHS identity colours — get_nhs_colour_tints" />
 <meta property="og:description" content="This function returns tints of the NHS identity colours" />
-<meta property="og:image" content="/logo.png" />
 
 
 
@@ -145,63 +137,66 @@ tint to use</p></td>
     <p>named vector of hexadecimal strings of colours</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>get_nhs_colour_tints</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.0</span>,<span class='fl'>0.8</span>,<span class='fl'>0.2</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;    DarkBlue.0%   DarkBlue.20%   DarkBlue.40%   DarkBlue.60%   DarkBlue.80% 
-#&gt;      "#003087"      "#33599F"      "#6683B7"      "#99ACCF"      "#CCD6E7" 
-#&gt;        Blue.0%       Blue.20%       Blue.40%       Blue.60%       Blue.80% 
-#&gt;      "#005EB8"      "#337EC6"      "#669ED4"      "#99BFE3"      "#CCDFF1" 
-#&gt;  BrightBlue.0% BrightBlue.20% BrightBlue.40% BrightBlue.60% BrightBlue.80% 
-#&gt;      "#0072CE"      "#338ED8"      "#66AAE2"      "#99C7EB"      "#CCE3F5" 
-#&gt;   LightBlue.0%  LightBlue.20%  LightBlue.40%  LightBlue.60%  LightBlue.80% 
-#&gt;      "#41B6E6"      "#67C5EB"      "#8DD3F0"      "#B3E2F5"      "#D9F0FA" 
-#&gt;    AquaBlue.0%   AquaBlue.20%   AquaBlue.40%   AquaBlue.60%   AquaBlue.80% 
-#&gt;      "#00A9CE"      "#33BAD8"      "#66CBE2"      "#99DDEB"      "#CCEEF5" 
-#&gt;       Black.0%      Black.20%      Black.40%      Black.60%      Black.80% 
-#&gt;      "#231F20"      "#4F4C4D"      "#7B7979"      "#A7A5A6"      "#D3D2D2" 
-#&gt;    DarkGrey.0%   DarkGrey.20%   DarkGrey.40%   DarkGrey.60%   DarkGrey.80% 
-#&gt;      "#425563"      "#687782"      "#8E99A1"      "#B3BBC1"      "#D9DDE0" 
-#&gt;     MidGrey.0%    MidGrey.20%    MidGrey.40%    MidGrey.60%    MidGrey.80% 
-#&gt;      "#768692"      "#919EA8"      "#ADB6BE"      "#C8CFD3"      "#E4E7E9" 
-#&gt;    PaleGrey.0%   PaleGrey.20%   PaleGrey.40%   PaleGrey.60%   PaleGrey.80% 
-#&gt;      "#E8EDEE"      "#EDF1F1"      "#F1F4F5"      "#F6F8F8"      "#FAFBFC" 
-#&gt;   DarkGreen.0%  DarkGreen.20%  DarkGreen.40%  DarkGreen.60%  DarkGreen.80% 
-#&gt;      "#006747"      "#33856C"      "#66A491"      "#99C2B5"      "#CCE1DA" 
-#&gt;       Green.0%      Green.20%      Green.40%      Green.60%      Green.80% 
-#&gt;      "#009639"      "#33AB61"      "#66C088"      "#99D5B0"      "#CCEAD7" 
-#&gt;  LightGreen.0% LightGreen.20% LightGreen.40% LightGreen.60% LightGreen.80% 
-#&gt;      "#78BE20"      "#93CB4D"      "#AED879"      "#C9E5A6"      "#E4F2D2" 
-#&gt;   AquaGreen.0%  AquaGreen.20%  AquaGreen.40%  AquaGreen.60%  AquaGreen.80% 
-#&gt;      "#00A499"      "#33B6AD"      "#66C8C2"      "#99DBD6"      "#CCEDEB" 
-#&gt;      Purple.0%     Purple.20%     Purple.40%     Purple.60%     Purple.80% 
-#&gt;      "#330072"      "#5C338E"      "#8566AA"      "#AD99C7"      "#D6CCE3" 
-#&gt;    DarkPink.0%   DarkPink.20%   DarkPink.40%   DarkPink.60%   DarkPink.80% 
-#&gt;      "#7C2855"      "#965377"      "#B07E99"      "#CBA9BB"      "#E5D4DD" 
-#&gt;        Pink.0%       Pink.20%       Pink.40%       Pink.60%       Pink.80% 
-#&gt;      "#AE2573"      "#BE518F"      "#CE7CAB"      "#DFA8C7"      "#EFD3E3" 
-#&gt;     DarkRed.0%    DarkRed.20%    DarkRed.40%    DarkRed.60%    DarkRed.80% 
-#&gt;      "#8A1538"      "#A14460"      "#B97388"      "#D0A1AF"      "#E8D0D7" 
-#&gt;         Red.0%        Red.20%        Red.40%        Red.60%        Red.80% 
-#&gt;      "#DA291C"      "#E15449"      "#E97F77"      "#F0A9A4"      "#F8D4D2" 
-#&gt;      Orange.0%     Orange.20%     Orange.40%     Orange.60%     Orange.80% 
-#&gt;      "#ED8B00"      "#F1A233"      "#F4B966"      "#F8D199"      "#FBE8CC" 
-#&gt;  WarmYellow.0% WarmYellow.20% WarmYellow.40% WarmYellow.60% WarmYellow.80% 
-#&gt;      "#FFB81C"      "#FFC649"      "#FFD477"      "#FFE3A4"      "#FFF1D2" 
-#&gt;      Yellow.0%     Yellow.20%     Yellow.40%     Yellow.60%     Yellow.80% 
-#&gt;      "#FAE100"      "#FBE733"      "#FCED66"      "#FDF399"      "#FEF9CC" </div><div class='input'><span class='fu'>get_nhs_colour_tints</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.0</span>,<span class='fl'>0.8</span>,<span class='fl'>0.2</span><span class='op'>)</span>, <span class='st'>"Blue"</span>, <span class='st'>"Red"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;   Blue.0%  Blue.20%  Blue.40%  Blue.60%  Blue.80%    Red.0%   Red.20%   Red.40% 
-#&gt; "#005EB8" "#337EC6" "#669ED4" "#99BFE3" "#CCDFF1" "#DA291C" "#E15449" "#E97F77" 
-#&gt;   Red.60%   Red.80% 
-#&gt; "#F0A9A4" "#F8D4D2" </div><div class='input'><span class='fu'>get_nhs_colour_tints</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.0</span>,<span class='fl'>0.8</span>,<span class='fl'>0.2</span><span class='op'>)</span>, section <span class='op'>=</span> <span class='st'>"blues"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;    DarkBlue.0%   DarkBlue.20%   DarkBlue.40%   DarkBlue.60%   DarkBlue.80% 
-#&gt;      "#003087"      "#33599F"      "#6683B7"      "#99ACCF"      "#CCD6E7" 
-#&gt;        Blue.0%       Blue.20%       Blue.40%       Blue.60%       Blue.80% 
-#&gt;      "#005EB8"      "#337EC6"      "#669ED4"      "#99BFE3"      "#CCDFF1" 
-#&gt;  BrightBlue.0% BrightBlue.20% BrightBlue.40% BrightBlue.60% BrightBlue.80% 
-#&gt;      "#0072CE"      "#338ED8"      "#66AAE2"      "#99C7EB"      "#CCE3F5" 
-#&gt;   LightBlue.0%  LightBlue.20%  LightBlue.40%  LightBlue.60%  LightBlue.80% 
-#&gt;      "#41B6E6"      "#67C5EB"      "#8DD3F0"      "#B3E2F5"      "#D9F0FA" 
-#&gt;    AquaBlue.0%   AquaBlue.20%   AquaBlue.40%   AquaBlue.60%   AquaBlue.80% 
-#&gt;      "#00A9CE"      "#33BAD8"      "#66CBE2"      "#99DDEB"      "#CCEEF5" </div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>get_nhs_colour_tints</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.0</span>,<span class='fl'>0.8</span>,<span class='fl'>0.2</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    DarkBlue.0%   DarkBlue.20%   DarkBlue.40%   DarkBlue.60%   DarkBlue.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#003087"      "#33599F"      "#6683B7"      "#99ACCF"      "#CCD6E7" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>        Blue.0%       Blue.20%       Blue.40%       Blue.60%       Blue.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#005EB8"      "#337EC6"      "#669ED4"      "#99BFE3"      "#CCDFF1" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  BrightBlue.0% BrightBlue.20% BrightBlue.40% BrightBlue.60% BrightBlue.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#0072CE"      "#338ED8"      "#66AAE2"      "#99C7EB"      "#CCE3F5" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   LightBlue.0%  LightBlue.20%  LightBlue.40%  LightBlue.60%  LightBlue.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#41B6E6"      "#67C5EB"      "#8DD3F0"      "#B3E2F5"      "#D9F0FA" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    AquaBlue.0%   AquaBlue.20%   AquaBlue.40%   AquaBlue.60%   AquaBlue.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#00A9CE"      "#33BAD8"      "#66CBE2"      "#99DDEB"      "#CCEEF5" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>       Black.0%      Black.20%      Black.40%      Black.60%      Black.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#231F20"      "#4F4C4D"      "#7B7979"      "#A7A5A6"      "#D3D2D2" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    DarkGrey.0%   DarkGrey.20%   DarkGrey.40%   DarkGrey.60%   DarkGrey.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#425563"      "#687782"      "#8E99A1"      "#B3BBC1"      "#D9DDE0" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>     MidGrey.0%    MidGrey.20%    MidGrey.40%    MidGrey.60%    MidGrey.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#768692"      "#919EA8"      "#ADB6BE"      "#C8CFD3"      "#E4E7E9" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    PaleGrey.0%   PaleGrey.20%   PaleGrey.40%   PaleGrey.60%   PaleGrey.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#E8EDEE"      "#EDF1F1"      "#F1F4F5"      "#F6F8F8"      "#FAFBFC" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   DarkGreen.0%  DarkGreen.20%  DarkGreen.40%  DarkGreen.60%  DarkGreen.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#006747"      "#33856C"      "#66A491"      "#99C2B5"      "#CCE1DA" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>       Green.0%      Green.20%      Green.40%      Green.60%      Green.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#009639"      "#33AB61"      "#66C088"      "#99D5B0"      "#CCEAD7" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  LightGreen.0% LightGreen.20% LightGreen.40% LightGreen.60% LightGreen.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#78BE20"      "#93CB4D"      "#AED879"      "#C9E5A6"      "#E4F2D2" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   AquaGreen.0%  AquaGreen.20%  AquaGreen.40%  AquaGreen.60%  AquaGreen.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#00A499"      "#33B6AD"      "#66C8C2"      "#99DBD6"      "#CCEDEB" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      Purple.0%     Purple.20%     Purple.40%     Purple.60%     Purple.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#330072"      "#5C338E"      "#8566AA"      "#AD99C7"      "#D6CCE3" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    DarkPink.0%   DarkPink.20%   DarkPink.40%   DarkPink.60%   DarkPink.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#7C2855"      "#965377"      "#B07E99"      "#CBA9BB"      "#E5D4DD" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>        Pink.0%       Pink.20%       Pink.40%       Pink.60%       Pink.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#AE2573"      "#BE518F"      "#CE7CAB"      "#DFA8C7"      "#EFD3E3" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>     DarkRed.0%    DarkRed.20%    DarkRed.40%    DarkRed.60%    DarkRed.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#8A1538"      "#A14460"      "#B97388"      "#D0A1AF"      "#E8D0D7" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>         Red.0%        Red.20%        Red.40%        Red.60%        Red.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#DA291C"      "#E15449"      "#E97F77"      "#F0A9A4"      "#F8D4D2" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      Orange.0%     Orange.20%     Orange.40%     Orange.60%     Orange.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#ED8B00"      "#F1A233"      "#F4B966"      "#F8D199"      "#FBE8CC" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  WarmYellow.0% WarmYellow.20% WarmYellow.40% WarmYellow.60% WarmYellow.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#FFB81C"      "#FFC649"      "#FFD477"      "#FFE3A4"      "#FFF1D2" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      Yellow.0%     Yellow.20%     Yellow.40%     Yellow.60%     Yellow.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#FAE100"      "#FBE733"      "#FCED66"      "#FDF399"      "#FEF9CC" </span>
+<span class='r-in'><span class='fu'>get_nhs_colour_tints</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.0</span>,<span class='fl'>0.8</span>,<span class='fl'>0.2</span><span class='op'>)</span>, <span class='st'>"Blue"</span>, <span class='st'>"Red"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Blue.0%  Blue.20%  Blue.40%  Blue.60%  Blue.80%    Red.0%   Red.20%   Red.40% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "#005EB8" "#337EC6" "#669ED4" "#99BFE3" "#CCDFF1" "#DA291C" "#E15449" "#E97F77" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Red.60%   Red.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "#F0A9A4" "#F8D4D2" </span>
+<span class='r-in'><span class='fu'>get_nhs_colour_tints</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.0</span>,<span class='fl'>0.8</span>,<span class='fl'>0.2</span><span class='op'>)</span>, section <span class='op'>=</span> <span class='st'>"blues"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    DarkBlue.0%   DarkBlue.20%   DarkBlue.40%   DarkBlue.60%   DarkBlue.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#003087"      "#33599F"      "#6683B7"      "#99ACCF"      "#CCD6E7" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>        Blue.0%       Blue.20%       Blue.40%       Blue.60%       Blue.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#005EB8"      "#337EC6"      "#669ED4"      "#99BFE3"      "#CCDFF1" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  BrightBlue.0% BrightBlue.20% BrightBlue.40% BrightBlue.60% BrightBlue.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#0072CE"      "#338ED8"      "#66AAE2"      "#99C7EB"      "#CCE3F5" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   LightBlue.0%  LightBlue.20%  LightBlue.40%  LightBlue.60%  LightBlue.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#41B6E6"      "#67C5EB"      "#8DD3F0"      "#B3E2F5"      "#D9F0FA" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    AquaBlue.0%   AquaBlue.20%   AquaBlue.40%   AquaBlue.60%   AquaBlue.80% </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "#00A9CE"      "#33BAD8"      "#66CBE2"      "#99DDEB"      "#CCEEF5" </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
