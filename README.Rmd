@@ -15,23 +15,23 @@ knitr::opts_chunk$set(
 )
 ```
 
-# NHS-R Theme <a alt="NHS-R Community's logo" href='https://nhsrcommunity.com/'><img src='https://nhs-r-community.github.io/assets/logo/nhsr-logo.png' align="right" height="80" /></a>
+# NHS-R Theme <a alt="NHS-R Community's logo" href="https://nhsrcommunity.com/"><img src="https://nhs-r-community.github.io/assets/logo/nhsr-logo.png" align="right" height="80" /></a>
 
 <!-- badges: start -->
-[![R build status](https://github.com/nhs-r-community/nhsrtheme/workflows/R-CMD-check/badge.svg)](https://github.com/nhs-r-community/nhsrtheme/actions)
+[![R build status](https://github.com/nhs-r-community/NHSRtheme/workflows/R-CMD-check/badge.svg)](https://github.com/nhs-r-community/NHSRtheme/actions)
 <!-- badges: end -->
 
 This repo attempts to build an R package that can provide themes to ggplot for producing charts that follow the [NHS Identity](https://www.england.nhs.uk/nhsidentity/).
 
-# Installing nhsrtheme
+# Installing NHSRtheme
 
-`{nhsrtheme}` is not currently on CRAN, so you will have to install it directly from Github using devtools.
+`{NHSRtheme}` is not currently on CRAN, so you will have to install it directly from Github using devtools.
 
 If you do not have the devtools package installed, you will have to run the first line in the code below as well.
 
 ```{r eval=FALSE}
 # install.packages('devtools')
-devtools::install_github('nhs-r-community/nhsrtheme')
+devtools::install_github('nhs-r-community/NHSRtheme')
 ```
 
 
@@ -39,7 +39,7 @@ devtools::install_github('nhs-r-community/nhsrtheme')
 
 ```{r,setup_bars}
 library(ggplot2)
-library(nhsrtheme)
+library(NHSRtheme)
 df <- data.frame(x = c("a", "b", "c", "d"), y = c(3, 4, 1, 2))
 bars <- ggplot(df, aes(x, y, fill = x)) + 
     geom_bar(stat = "identity") + 

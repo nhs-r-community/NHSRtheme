@@ -1,6 +1,6 @@
 ## Filing Bugs
 
-If you're experiencing behavior that appears to be a bug, you're welcome to [file an issue](https://github.com/tomjemmett/nhsrtheme/issues/new). Before you do, please go through this pre-flight checklist:
+If you're experiencing behavior that appears to be a bug, you're welcome to [file an issue](https://github.com/tomjemmett/NHSRtheme/issues/new). Before you do, please go through this pre-flight checklist:
 
 1. Is your issue a bug rather than a question? If you're having general trouble with RStudio or have questions for the RStudio community, the [RStudio Community Forum](https://community.rstudio.com/c/rstudio-ide) is an excellent resource.
 
@@ -8,13 +8,13 @@ If you're experiencing behavior that appears to be a bug, you're welcome to [fil
 
 ## Enhancements
 
-You're also welcome to submit ideas for enhancements to the NHS R Theme. When doing so, please [search the issue list](https://github.com/tomjemmett/nhsrtheme/issues) to see if the enhancement has already been filed. If it has, vote for it (add a reaction to it) and optionally add a comment with your perspective on the idea. 
+You're also welcome to submit ideas for enhancements to the NHS R Theme. When doing so, please [search the issue list](https://github.com/tomjemmett/NHSRtheme/issues) to see if the enhancement has already been filed. If it has, vote for it (add a reaction to it) and optionally add a comment with your perspective on the idea. 
 
 ## Contributing Code
 
 We welcome contributions. To submit a contribution:
 
-1. [Fork](https://github.com/tomjemmett/nhsrtheme/fork) the repository and make your changes.
+1. [Fork](https://github.com/tomjemmett/NHSRtheme/fork) the repository and make your changes.
 
 2. Submit a [pull request](https://help.github.com/articles/using-pull-requests).
 

@@ -25,7 +25,7 @@ output:
 ```{r setup, include = FALSE}
 library(knitr)
 library(tidyverse)
-library(nhsrtheme)
+library(NHSRtheme)
 # set default options
 opts_chunk$set(echo = FALSE,
                fig.width = 7.252,

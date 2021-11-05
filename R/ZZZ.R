@@ -1,12 +1,12 @@
-#' \code{nhsrtheme} package
+#' \code{NHSRtheme} package
 #'
 #' NHS Theme
 #'
 #' #' See the README on
-#' \url{https://github.com/tomjemmet/nhsrtheme/}
+#' \url{https://github.com/tomjemmet/NHSRtheme/}
 #'
 #' @docType package
-#' @name nhsrtheme
+#' @name NHSRtheme
 NULL
 
 ## Prevent R CMD check notes about missing bindings for global variables
