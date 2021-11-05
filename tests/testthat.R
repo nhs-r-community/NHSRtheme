@@ -1,4 +1,4 @@
 library(testthat)
-library(nhsrtheme)
+library(NHSRtheme)
 
-test_check("nhsrtheme")
+test_check("NHSRtheme")

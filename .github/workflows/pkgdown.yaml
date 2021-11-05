@@ -71,7 +71,7 @@ jobs:
 
           # generate samples
 
-          samples_path <- system.file("samples", package = "nhsrtheme")
+          samples_path <- system.file("samples", package = "NHSRtheme")
           new_samples <- file.path(dest_dir, "samples")
           if (dir.exists(new_samples)) {
             unlink(new_samples, TRUE, TRUE)

@@ -1,4 +1,4 @@
-Thank you for your contribution to the nhsrtheme repo. 
+Thank you for your contribution to the NHSRtheme repo. 
 Before submitting this PR, please make sure:
 
 - [ ] Your code passes [R CMD check](http://r-pkgs.had.co.nz/check.html)
