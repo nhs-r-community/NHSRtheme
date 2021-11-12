@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NA • NHSRtheme</title>
+<title>Welcome to NHS-R Community NHSRtheme contributing guide  • NHSRtheme</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="NA" />
+<meta property="og:title" content="Welcome to NHS-R Community NHSRtheme contributing guide " />
 
 
 
@@ -102,35 +102,51 @@
 <div class="row">
   <div class="contents col-md-9">
     <div class="page-header">
-      <h1>NA</h1>
+      <h1>Welcome to NHS-R Community NHSRtheme contributing guide </h1>
     </div>
 
+<div id="welcome-to-nhs-r-community-nhsrtheme-contributing-guide-" class="section level1">
 
-<div id="filing-bugs" class="section level2">
+<p>Thank you for investing your time in contributing to our project! Any contribution you make will be reflected on <a href="https://nhs-r-community.github.io/NHSRtheme">nhs-r-community.github.io/NHSRtheme</a> <span class="emoji" data-emoji="sparkles">✨</span>.</p>
+<p>Read our <a href="./CODE_OF_CONDUCT.html">Code of Conduct</a> to keep our community approachable and respectable.</p>
+<p>In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.</p>
+<div id="new-contributor-guide" class="section level2">
 <h2 class="hasAnchor">
-<a href="#filing-bugs" class="anchor"></a>Filing Bugs</h2>
-<p>If you’re experiencing behavior that appears to be a bug, you’re welcome to <a href="https://github.com/tomjemmett/NHSRtheme/issues/new">file an issue</a>. Before you do, please go through this pre-flight checklist:</p>
-<ol>
-<li><p>Is your issue a bug rather than a question? If you’re having general trouble with RStudio or have questions for the RStudio community, the <a href="https://community.rstudio.com/c/rstudio-ide">RStudio Community Forum</a> is an excellent resource.</p></li>
-<li><p>Are you the first person to report this issue? <a href="https://github.com/rstudio/rstudio/issues">Search the issue list</a> to find out. If you aren’t, the most helpful thing you can do is vote for the existing issue (add a +1 reaction to it), and optionally add a comment describing your own experience.</p></li>
-</ol>
+<a href="#new-contributor-guide" class="anchor"></a>New contributor guide</h2>
+<p>To get an overview of the project, read the <a href="README.html">README</a>.</p>
+<div id="issues" class="section level3">
+<h3 class="hasAnchor">
+<a href="#issues" class="anchor"></a>Issues</h3>
+<div id="general-issues" class="section level4">
+<h4 class="hasAnchor">
+<a href="#general-issues" class="anchor"></a>General issues</h4>
+<p>If you’re having general trouble, rather than a bug, please do join the <a href="https://nhsrcommunity.slack.com/">NHS-R slack</a> and ask on the #help-with-r channel.</p>
 </div>
-<div id="enhancements" class="section level2">
-<h2 class="hasAnchor">
-<a href="#enhancements" class="anchor"></a>Enhancements</h2>
-<p>You’re also welcome to submit ideas for enhancements to the NHS R Theme. When doing so, please <a href="https://github.com/tomjemmett/NHSRtheme/issues">search the issue list</a> to see if the enhancement has already been filed. If it has, vote for it (add a reaction to it) and optionally add a comment with your perspective on the idea.</p>
+<div id="create-a-new-issue" class="section level4">
+<h4 class="hasAnchor">
+<a href="#create-a-new-issue" class="anchor"></a>Create a new issue</h4>
+<p>If you spot a problem with the package, <a href="https://github.com/nhs-r-community/issues">search if an issue already exists</a>. If a related issue doesn’t exist, you can open a new issue using a relevant <a href="https://github.com/nhs-r-community/issues/new">issue form</a>.</p>
 </div>
-<div id="contributing-code" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contributing-code" class="anchor"></a>Contributing Code</h2>
-<p>We welcome contributions. To submit a contribution:</p>
-<ol>
-<li><p><a href="https://github.com/tomjemmett/NHSRtheme/fork">Fork</a> the repository and make your changes.</p></li>
-<li><p>Submit a <a href="https://help.github.com/articles/using-pull-requests">pull request</a>.</p></li>
-</ol>
-<p>We’ll try to be as responsive as possible in reviewing and accepting pull requests. Appreciate your contributions very much!</p>
+<div id="solve-an-issue" class="section level4">
+<h4 class="hasAnchor">
+<a href="#solve-an-issue" class="anchor"></a>Solve an issue</h4>
+<p>Scan through our <a href="https://github.com/nhs-r-community/issues">existing issues</a> to find one that interests you. You can narrow down the search using <code>labels</code> as filters. As a general rule, we don’t assign issues to anyone. If you find an issue to work on, you are welcome to open a PR with a fix.</p>
 </div>
-
+</div>
+<div id="make-changes" class="section level3">
+<h3 class="hasAnchor">
+<a href="#make-changes" class="anchor"></a>Make Changes</h3>
+<p>The easiest way to make changes is to clone the repository using <a href="https://resources.github.com/whitepapers/github-and-rstudio/#:~:text=Open%20RStudio%20on%20your%20local,Click%20Create%20Project%20.">RStudio</a>.</p>
+<p>First, make sure to <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">fork</a> this repository into your own userspace. Once you have done that, you can then clone the repository in RStudio.</p>
+<p>Once you have cloned the repository, create a new <a href="https://r-bio.github.io/intro-git-rstudio/">branch</a>.</p>
+<p>An easy way to make sure you have all of the packages required for development is to use the <a href="https://devtools.r-lib.org/">devtools</a> R package:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/install_deps.html">install_deps</a></span><span class="op">(</span>dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<p>You can also use the <code><a href="https://devtools.r-lib.org//reference/load_all.html">devtools::load_all()</a></code> function to test the package out without having to install it first.</p>
+<p>You can now start working on the changes that you wish to make. Once you have finished, make sure to open a Pull Request (you can do this easily in R using <code><a href="https://usethis.r-lib.org/reference/pull-requests.html">usethis::pr_push()</a></code>).</p>
+</div>
+</div>
+</div>
 
   </div>
 
