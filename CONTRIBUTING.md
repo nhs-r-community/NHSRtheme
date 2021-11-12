@@ -1,21 +1,43 @@
-## Filing Bugs
+# Welcome to NHS-R Community NHSRtheme contributing guide <!-- omit in toc -->
 
-If you're experiencing behavior that appears to be a bug, you're welcome to [file an issue](https://github.com/tomjemmett/NHSRtheme/issues/new). Before you do, please go through this pre-flight checklist:
+Thank you for investing your time in contributing to our project! Any contribution you make will be reflected on [nhs-r-community.github.io/NHSRtheme](https://nhs-r-community.github.io/NHSRtheme) :sparkles:. 
 
-1. Is your issue a bug rather than a question? If you're having general trouble with RStudio or have questions for the RStudio community, the [RStudio Community Forum](https://community.rstudio.com/c/rstudio-ide) is an excellent resource.
+Read our [Code of Conduct](./CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
 
-3. Are you the first person to report this issue? [Search the issue list](https://github.com/rstudio/rstudio/issues) to find out. If you aren't, the most helpful thing you can do is vote for the existing issue (add a +1 reaction to it), and optionally add a comment describing your own experience.
+In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
-## Enhancements
+## New contributor guide
 
-You're also welcome to submit ideas for enhancements to the NHS R Theme. When doing so, please [search the issue list](https://github.com/tomjemmett/NHSRtheme/issues) to see if the enhancement has already been filed. If it has, vote for it (add a reaction to it) and optionally add a comment with your perspective on the idea. 
+To get an overview of the project, read the [README](README.md).
 
-## Contributing Code
+### Issues
 
-We welcome contributions. To submit a contribution:
+#### General issues
 
-1. [Fork](https://github.com/tomjemmett/NHSRtheme/fork) the repository and make your changes.
+If you're having general trouble, rather than a bug, please do join the [NHS-R slack](https://nhsrcommunity.slack.com/) and ask on the #help-with-r channel.
 
-2. Submit a [pull request](https://help.github.com/articles/using-pull-requests).
+#### Create a new issue
 
-We'll try to be as responsive as possible in reviewing and accepting pull requests. Appreciate your contributions very much!
+If you spot a problem with the package, [search if an issue already exists](https://github.com/nhs-r-community/issues). If a related issue doesn't exist, you can open a new issue using a relevant [issue form](https://github.com/nhs-r-community/issues/new). 
+
+#### Solve an issue
+
+Scan through our [existing issues](https://github.com/nhs-r-community/issues) to find one that interests you. You can narrow down the search using `labels` as filters. As a general rule, we don’t assign issues to anyone. If you find an issue to work on, you are welcome to open a PR with a fix.
+
+### Make Changes
+
+The easiest way to make changes is to clone the repository using [RStudio](https://resources.github.com/whitepapers/github-and-rstudio/#:~:text=Open%20RStudio%20on%20your%20local,Click%20Create%20Project%20.).
+
+First, make sure to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository into your own userspace. Once you have done that, you can then clone the repository in RStudio.
+
+Once you have cloned the repository, create a new [branch](https://r-bio.github.io/intro-git-rstudio/).
+
+An easy way to make sure you have all of the packages required for development is to use the `{devtools}` R package:
+
+``` r
+devtools::install_deps(dependencies = TRUE)
+```
+
+You can also use the `devtools::load_all()` function to test the package out without having to install it first.
+
+You can now start working on the changes that you wish to make. Once you have finished, make sure to open a Pull Request (you can do this easily in R using `usethis::pr_push()`).
