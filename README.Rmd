@@ -23,6 +23,8 @@ knitr::opts_chunk$set(
 
 This repo attempts to build an R package that can provide themes to ggplot for producing charts that follow the [NHS Identity](https://www.england.nhs.uk/nhsidentity/).
 
+This package will also produce xaringan presentation slides that can be viewed as HTML. For more details please see the vignette provided.
+
 # Installing NHSRtheme
 
 `{NHSRtheme}` is not currently on CRAN, so you will have to install it directly from Github using devtools.

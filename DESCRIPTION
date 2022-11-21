@@ -34,3 +34,4 @@ Suggests:
     knitr,
     tidyverse,
     NHSRdatasets
+VignetteBuilder: knitr

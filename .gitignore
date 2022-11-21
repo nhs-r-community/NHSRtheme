@@ -7,3 +7,4 @@ packrat/lib*/
 packrat/src/
 docs/
 pkgdown/
+inst/doc
