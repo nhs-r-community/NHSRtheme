@@ -1,0 +1,19 @@
+---
+title: "How to use the presentation template"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How to use the presentation template}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This package will also produce xaringan presentation slides that can be viewed as HTML. To make xaringan slides with this package it is simplest to use the RStudio menu: File... New file... RMarkdown. Select "From template" on the left side of the pop up that appears and select "NHS-R presentation" from the right hand side of the menu. Optionally give the presentation a name and select the file location, and click "OK".
+
+A skeleton file will be produced which you can render any time by pressing "Knit" in the menu bar above the code file in RStudio. You will need to replace the file inside the presentation folder at `presentation_location/img/logo-title-slide.png` with the logo which you wish to use from your own organisation. 
