@@ -16,14 +16,14 @@ Identity](https://www.england.nhs.uk/nhsidentity/).
 # Installing NHSRtheme
 
 `{NHSRtheme}` is not currently on CRAN, so you will have to install it
-directly from Github using devtools.
+directly from Github.
 
 If you do not have the devtools package installed, you will have to run
 the first line in the code below as well.
 
 ``` r
-# install.packages('devtools')
-devtools::install_github('nhs-r-community/NHSRtheme')
+# install.packages('remotes')
+remotes::install_github('nhs-r-community/NHSRtheme')
 ```
 
 ## Examples
