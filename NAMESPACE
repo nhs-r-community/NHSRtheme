@@ -2,6 +2,7 @@
 
 export(get_nhs_colour_tints)
 export(get_nhs_colours)
+export(get_nhs_palette)
 export(scale_colour_nhs)
 export(scale_fill_nhs)
 export(show_nhs_theme_colour_tints)
