@@ -5,6 +5,7 @@
 #' @param ... Additional arguments to pass to colorRampPalette()
 #'
 #' @importFrom grDevices colorRampPalette
+#' @export
 get_nhs_palette <- function(palette = "main", reverse = FALSE, ...) {
   if (palette == "main") {
     pal <- get_nhs_colours("Blue", "Purple", "Red", "Orange", "Green")
@@ -16,3 +17,4 @@ get_nhs_palette <- function(palette = "main", reverse = FALSE, ...) {
 
   colorRampPalette(pal, ...)
 }
+
