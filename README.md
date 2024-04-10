@@ -7,23 +7,27 @@
 
 [![R build
 status](https://github.com/nhs-r-community/NHSRtheme/workflows/R-CMD-check/badge.svg)](https://github.com/nhs-r-community/NHSRtheme/actions)
+[![R-CMD-check](https://github.com/nhs-r-community/NHSRtheme/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nhs-r-community/NHSRtheme/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 This repo attempts to build an R package that can provide themes to
 ggplot for producing charts that follow the [NHS
 Identity](https://www.england.nhs.uk/nhsidentity/).
 
+This package will also produce xaringan presentation slides that can be
+viewed as HTML. For more details please see the vignette provided.
+
 # Installing NHSRtheme
 
 `{NHSRtheme}` is not currently on CRAN, so you will have to install it
-directly from Github.
+directly from Github using devtools.
 
 If you do not have the devtools package installed, you will have to run
 the first line in the code below as well.
 
 ``` r
-# install.packages('remotes')
-remotes::install_github('nhs-r-community/NHSRtheme')
+# install.packages('devtools')
+devtools::install_github('nhs-r-community/NHSRtheme')
 ```
 
 ## Examples

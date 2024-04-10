@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R build status](https://github.com/nhs-r-community/NHSRtheme/workflows/R-CMD-check/badge.svg)](https://github.com/nhs-r-community/NHSRtheme/actions)
+[![R-CMD-check](https://github.com/nhs-r-community/NHSRtheme/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nhs-r-community/NHSRtheme/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 This repo attempts to build an R package that can provide themes to ggplot for producing charts that follow the [NHS Identity](https://www.england.nhs.uk/nhsidentity/).

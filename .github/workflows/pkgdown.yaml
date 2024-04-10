@@ -1,96 +1,48 @@
+# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
+# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
 on:
   push:
     branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  release:
+    types: [published]
+  workflow_dispatch:
 
 name: pkgdown
 
 jobs:
   pkgdown:
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
+    # Only restrict concurrency for non-PR jobs
+    concurrency:
+      group: pkgdown-${{ github.event_name != 'pull_request' || github.run_id }}
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v2
 
-      - uses: r-lib/actions/setup-pandoc@v1
-
-      - name: Query dependencies
-        run: |
-          install.packages('remotes')
-          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
-          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
-        shell: Rscript {0}
-
-      - name: Cache R packages
-        uses: actions/cache@v2
+      - uses: r-lib/actions/setup-r@v2
         with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+          use-public-rspm: true
 
-      - name: Install dependencies
-        run: |
-          remotes::install_deps(dependencies = TRUE)
-          install.packages("pkgdown", type = "binary")
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::pkgdown, local::.
+          needs: website
+
+      - name: Build site
+        run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
         shell: Rscript {0}
 
-      - name: Install package
-        run: R CMD INSTALL .
-
-      - name: Deploy package
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'
-
-      - name: Generate samples
-        run: |
-          # generate sample of slides
-
-          install.packages("callr")
-          install.packages("fs")
-          install.packages("withr")
-
-          devtools::install_github("gadenbuie/xaringanExtra")
-
-          dest_dir <- fs::dir_create(fs::file_temp())
-          on.exit(fs::dir_delete(dest_dir))
-
-          git <- function (..., echo_cmd = TRUE, echo = TRUE, error_on_status = TRUE) {
-            callr::run("git", c(...), echo_cmd = echo_cmd, echo = echo,
-                error_on_status = error_on_status)
-          }
-
-          git("remote", "set-branches", "origin", "gh-pages")
-          git("fetch", "origin", "gh-pages")
-
-          git("worktree", "add", "--track", "-B", "gh-pages", dest_dir, "origin/gh-pages")
-          on.exit(git("worktree", "remove", dest_dir), add = TRUE)
-
-          # generate samples
-
-          samples_path <- system.file("samples", package = "NHSRtheme")
-          new_samples <- file.path(dest_dir, "samples")
-          if (dir.exists(new_samples)) {
-            unlink(new_samples, TRUE, TRUE)
-          }
-
-          dir.create(new_samples)
-          file.copy(samples_path, dest_dir, TRUE, TRUE)
-
-          withr::with_dir(new_samples, {
-            samples <- dir(pattern = "\\.[Rr]md$")
-            for (s in samples) {
-              rmarkdown::render(s)
-              unlink(s)
-            }
-          })
-
-          withr::with_dir(dest_dir, {
-            git("add", "-A", ".")
-            git("commit", "--allow-empty", "-m", "renders samples")
-            git("push", "--force", "origin", "HEAD:gh-pages")
-          })
-        shell: Rscript {0}
+      - name: Deploy to GitHub pages 🚀
+        if: github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        with:
+          clean: false
+          branch: gh-pages
+          folder: docs
