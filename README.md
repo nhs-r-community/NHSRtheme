@@ -4,9 +4,6 @@
 # NHS-R Theme <a alt="NHS-R Community's logo" href="https://nhsrcommunity.com/"><img src="https://nhs-r-community.github.io/assets/logo/nhsr-logo.png" align="right" height="80" /></a>
 
 <!-- badges: start -->
-
-[![R build
-status](https://github.com/nhs-r-community/NHSRtheme/workflows/R-CMD-check/badge.svg)](https://github.com/nhs-r-community/NHSRtheme/actions)
 [![R-CMD-check](https://github.com/nhs-r-community/NHSRtheme/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nhs-r-community/NHSRtheme/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
