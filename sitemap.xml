@@ -1,63 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/articles/presentation-template.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/pull_request_template.html</loc>
-  </url>
-  <url>
-    <loc>/reference/NHSRtheme.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_nhs_colour_tints.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_nhs_colours.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_nhs_palette.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/scale_colour_nhs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/scale_fill_nhs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/show_nhs_theme_colour_tints.html</loc>
-  </url>
-  <url>
-    <loc>/reference/show_nhs_theme_colours.html</loc>
-  </url>
-  <url>
-    <loc>/reference/theme_nhs.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>/CONTRIBUTING.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/articles/presentation-template.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/NHSRtheme.html</loc></url>
+<url><loc>/reference/get_nhs_colour_tints.html</loc></url>
+<url><loc>/reference/get_nhs_colours.html</loc></url>
+<url><loc>/reference/get_nhs_palette.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/scale_colour_nhs.html</loc></url>
+<url><loc>/reference/scale_fill_nhs.html</loc></url>
+<url><loc>/reference/show_nhs_theme_colour_tints.html</loc></url>
+<url><loc>/reference/show_nhs_theme_colours.html</loc></url>
+<url><loc>/reference/theme_nhs.html</loc></url>
 </urlset>
+
