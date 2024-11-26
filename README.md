@@ -3,6 +3,10 @@
 
 # NHS-R Theme <img src="https://raw.githubusercontent.com/nhs-r-community/NHSRtheme/main/inst/images/nhsrthemelogo.png" width="120" align = "right" alt = "NHSRtheme"/>
 
+<a href='https://nhsrcommunity.com/'><img src='https://nhs-r-community.github.io/assets/logo/nhsr-logo.png' width="100"/></a>
+*This package is part of the NHS-R Community suite of [R
+packages](https://nhsrcommunity.com/packages.html).*
+
 <!-- badges: start -->
 
 [![R build
