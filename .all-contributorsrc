@@ -25,6 +25,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "spcanelon",
+      "name": "Silvia Canelón",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49913337?v=4",
+      "profile": "https://silviacanelon.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
