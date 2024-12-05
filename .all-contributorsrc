@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "anyaferguson",
+      "name": "Anya Ferguson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157487567?v=4",
+      "profile": "https://github.com/anyaferguson",
+      "contributions": [
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "NHSRtheme",
+  "projectOwner": "nhs-r-community"
+}
