@@ -15,6 +15,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "tomjemmett",
+      "name": "Tom Jemmett",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12023696?v=4",
+      "profile": "https://tjmt.uk/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
