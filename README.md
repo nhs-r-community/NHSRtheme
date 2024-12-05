@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -99,6 +99,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/anyaferguson"><img src="https://avatars.githubusercontent.com/u/157487567?v=4?s=100" width="100px;" alt="Anya Ferguson"/><br /><sub><b>Anya Ferguson</b></sub></a><br /><a href="#design-anyaferguson" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://tjmt.uk/"><img src="https://avatars.githubusercontent.com/u/12023696?v=4?s=100" width="100px;" alt="Tom Jemmett"/><br /><sub><b>Tom Jemmett</b></sub></a><br /><a href="https://github.com/nhs-r-community/NHSRtheme/commits?author=tomjemmett" title="Code">💻</a> <a href="https://github.com/nhs-r-community/NHSRtheme/commits?author=tomjemmett" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://silviacanelon.com"><img src="https://avatars.githubusercontent.com/u/49913337?v=4?s=100" width="100px;" alt="Silvia Canelón"/><br /><sub><b>Silvia Canelón</b></sub></a><br /><a href="https://github.com/nhs-r-community/NHSRtheme/commits?author=spcanelon" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
