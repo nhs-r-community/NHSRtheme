@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -101,6 +101,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://tjmt.uk/"><img src="https://avatars.githubusercontent.com/u/12023696?v=4?s=100" width="100px;" alt="Tom Jemmett"/><br /><sub><b>Tom Jemmett</b></sub></a><br /><a href="https://github.com/nhs-r-community/NHSRtheme/commits?author=tomjemmett" title="Code">💻</a> <a href="https://github.com/nhs-r-community/NHSRtheme/commits?author=tomjemmett" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://silviacanelon.com"><img src="https://avatars.githubusercontent.com/u/49913337?v=4?s=100" width="100px;" alt="Silvia Canelón"/><br /><sub><b>Silvia Canelón</b></sub></a><br /><a href="https://github.com/nhs-r-community/NHSRtheme/commits?author=spcanelon" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://chrisbeeley.github.io/chris_beeley_blog/"><img src="https://avatars.githubusercontent.com/u/1259867?v=4?s=100" width="100px;" alt="Chris Beeley"/><br /><sub><b>Chris Beeley</b></sub></a><br /><a href="https://github.com/nhs-r-community/NHSRtheme/commits?author=ChrisBeeley" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://rhian.rbind.io"><img src="https://avatars.githubusercontent.com/u/7017740?v=4?s=100" width="100px;" alt="Rhian Davies"/><br /><sub><b>Rhian Davies</b></sub></a><br /><a href="https://github.com/nhs-r-community/NHSRtheme/commits?author=StatsRhian" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
